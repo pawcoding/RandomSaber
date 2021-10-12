@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://randomsaber.pawcode.de/schemas/modes.schema.json",
+  "title": "Modes",
+  "description": "List in which modes / difficulties the level can be played",
+  "type": "object",
+  "properties": {
+	"two": {
+	  "description": "Contains all difficulties for two-saber mode",
+	  "type": "string"
+	},
+	"one": {
+	  "description": "Contains all difficulties for one-saber mode",
+	  "type": "string"
+	},
+	"no": {
+	  "description": "Contains all difficulties for no-arrows mode",
+	  "type": "string"
+	},
+	"three": {
+	  "description": "Contains all difficulties for 360-degrees mode",
+	  "type": "string"
+	},
+	"ninety": {
+	  "description": "Contains all difficulties for 90-degrees mode",
+	  "type": "string"
+	}
+  },
+  "required": ["two","one", "no", "three", "ninety"]
+}

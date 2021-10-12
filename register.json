@@ -1,0 +1,7 @@
+{
+  "$schema": "https://randomsaber.pawcode.de/schemas/register.schema.json",
+  "packs": [
+	"vol1.json",
+	"vol2.json"
+  ]
+}

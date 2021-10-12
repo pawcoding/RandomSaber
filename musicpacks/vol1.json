@@ -1,0 +1,96 @@
+{
+  "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
+  "title": "Beat Saber OST Vol.1",
+  "id": "vol1",
+  "levels": [{
+    "song": "$100 Bills",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Balearic Pumping",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Beat Saber",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Breezer",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Commercial Pumping",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Country Rounds",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Escape",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Legend",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Lvl Insane",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Turn Me On",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }]
+}

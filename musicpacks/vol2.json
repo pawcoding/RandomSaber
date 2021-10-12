@@ -1,0 +1,51 @@
+{
+  "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
+  "title": "Beat Saber OST Vol.2",
+  "id": "vol2",
+  "levels": [{
+    "song": "Unlimited Power",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Rum n' Bass",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Be There For You",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Elixia",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "I Need You",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }]
+}
