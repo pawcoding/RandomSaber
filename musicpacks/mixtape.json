@@ -1,10 +1,10 @@
 {
   "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
-  "title": "Beat Saber OST Vol.2",
-  "id": "vol2",
-  "type": "ost",
+  "title": "Interscope Mixtape",
+  "id": "mixtape",
+  "type": "additive",
   "levels": [{
-    "song": "Unlimited Power",
+    "song": "Counting Stars",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -13,7 +13,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Rum n' Bass",
+    "song": "DNA.",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -22,7 +22,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Be There For You",
+    "song": "Don't Cha",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -31,7 +31,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Elixia",
+    "song": "Party Rock Anthem",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -40,7 +40,25 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "I Need You",
+    "song": "Rollin' (Air Raid Vehicle)",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Sugar",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "The Sweet Escape",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",

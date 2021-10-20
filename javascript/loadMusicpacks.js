@@ -6,12 +6,12 @@ $(function(){
 })
 
 function loadRegister() {
-	console.log('\tCheck register')
+	console.log('| Check register')
 	$.ajax({
 		cache: true,
 		dataType: 'json',
 		success: function(data, status) {
-			console.log('\tFetched packs: "'+ data.packs.join('", "') + '"')
+			console.log('| Fetched packs: "'+ data.packs.join('", "') + '"')
 			count = data.packs.length
 			loadMusicPacks(data.packs)
 		},
@@ -20,7 +20,7 @@ function loadRegister() {
 }
 
 function loadMusicPacks(packs) {
-	console.log('\tLoading packs')
+	console.log('| Loading packs')
 
 	packs.forEach(pack => {
 		loadMusicPack(pack)
@@ -28,22 +28,32 @@ function loadMusicPacks(packs) {
 }
 
 function loadMusicPack(pack) {
-	console.log('\t\tLoading "' + pack + '"')
+	console.log('| \tLoading "' + pack + '"')
 	$.ajax({
 		cache: true,
 		dataType: 'json',
 		success: function(data, status) {
-			console.log('\t\tPulled "' + data.title + '"')
+			console.log('| \tPulled "' + data.title + '"')
 			register[data.id] = data
 
 			if (Object.keys(register).length === count)
 				finishLoading()
 		},
-		url: '/musicpacks/' + pack
+		url: '/musicpacks/' + pack + '.json'
 	})
 }
 
 function finishLoading() {
-	console.log('\tFinished Loading')
-	console.log(register)
+	console.log('| Finished Loading')
+	for (const title in register) {
+		const pack = register[title]
+		$('#' + pack.type).append(`
+			<div class="pack">
+				<input type="checkbox" name="${pack.id}" value="${pack.id}" id="${pack.id}" ${pack.type === 'ost' ? 'checked' : ''}>
+				<label for="${pack.id}">
+					<img src="/covers/${pack.id}" title="${pack.title}" alt="${pack.title}">
+				</label>
+			</div>
+		`)
+	}
 }

@@ -2,6 +2,7 @@
   "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
   "title": "Beat Saber OST Vol.1",
   "id": "vol1",
+  "type": "ost",
   "levels": [{
     "song": "$100 Bills",
     "modes": {
