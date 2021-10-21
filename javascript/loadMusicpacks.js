@@ -22,19 +22,21 @@ function loadRegister() {
 function loadMusicPacks(packs) {
 	console.log('| Loading packs')
 
+	let index = 0
 	packs.forEach(pack => {
-		loadMusicPack(pack)
+		loadMusicPack(pack, index++)
 	})
 }
 
-function loadMusicPack(pack) {
-	console.log('| \tLoading "' + pack + '"')
+function loadMusicPack(pack, index) {
 	$.ajax({
 		cache: true,
 		dataType: 'json',
 		success: function(data, status) {
 			console.log('| \tPulled "' + data.title + '"')
-			register[data.id] = data
+			data.index = index
+			data.id = pack
+			register[pack] = data
 
 			if (Object.keys(register).length === count)
 				finishLoading()
@@ -45,13 +47,14 @@ function loadMusicPack(pack) {
 
 function finishLoading() {
 	console.log('| Finished Loading')
-	for (const title in register) {
+	const titles = Object.keys(register).sort((a, b) => register[a].index - register[b].index)
+	for (const title of titles) {
 		const pack = register[title]
 		$('#' + pack.type).append(`
 			<div class="pack">
 				<input type="checkbox" name="${pack.id}" value="${pack.id}" id="${pack.id}" ${pack.type === 'ost' ? 'checked' : ''}>
 				<label for="${pack.id}">
-					<img src="/covers/${pack.id}" title="${pack.title}" alt="${pack.title}">
+					<img src="/covers/${pack.id}.jpg" title="${pack.title}" alt="${pack.title}">
 				</label>
 			</div>
 		`)

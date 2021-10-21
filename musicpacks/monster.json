@@ -1,0 +1,96 @@
+{
+  "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
+  "title": "Monster Cat Vol.1",
+  "type": "additive",
+  "levels": [{
+	"song": "Boundless",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Emoji VIP",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Epic",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Feeling Stronger",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Overkill",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Rattlesnake",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Stronger",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "This Time",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Till It's Over",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "We Won't Be Alone",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }]
+}

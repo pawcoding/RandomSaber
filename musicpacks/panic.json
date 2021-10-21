@@ -1,7 +1,6 @@
 {
   "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
   "title": "Panic! At The Disco",
-  "id": "panic",
   "type": "additive",
   "levels": [{
     "song": "Emporer's New Clothes",

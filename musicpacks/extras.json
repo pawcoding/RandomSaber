@@ -1,0 +1,51 @@
+{
+  "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
+  "title": "Extras",
+  "type": "ost",
+  "levels": [{
+	"song": "Angel Voices",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "One Hope",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "POP/STARS",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Crab Rave",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "FitBeat",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }]
+}

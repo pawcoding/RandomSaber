@@ -1,0 +1,42 @@
+{
+  "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
+  "title": "Beat Saber OST Vol.4",
+  "type": "ost",
+  "levels": [{
+	"song": "Into The Dream",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "It Takes Me",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "LUDICROUS+",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Spin Eternally",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }]
+}

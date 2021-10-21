@@ -1,9 +1,9 @@
 {
   "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
-  "title": "Beat Saber OST Vol.2",
-  "type": "ost",
+  "title": "Monstercat x Rocket League",
+  "type": "additive",
   "levels": [{
-    "song": "Unlimited Power",
+    "song": "Glide",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -12,7 +12,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Rum n' Bass",
+    "song": "LUV U NEED U",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -21,7 +21,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Be There For You",
+    "song": "PLAY",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -30,7 +30,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Elixia",
+    "song": "ROCK IT",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -39,7 +39,16 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "I Need You",
+    "song": "Shiawese",
+    "modes": {
+      "two": "1;2;3;4;5",
+      "one": "1;2;3;4;5",
+      "no": "1;2;3;4;5",
+      "three": "1;2;3;4;5",
+      "ninety": "1;2;3;4;5"
+    }
+  }, {
+    "song": "Test Me",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",

@@ -9,10 +9,6 @@
       "description": "The title of the music-pack",
       "type": "string"
     },
-    "id": {
-      "description": "A short version of the title",
-      "type": "string"
-    },
     "type": {
       "description": "'ost' or 'additive' pack",
       "type": "string"
@@ -28,5 +24,5 @@
       }
     }
   },
-  "required": ["title", "id", "type", "levels"]
+  "required": ["title", "type", "levels"]
 }

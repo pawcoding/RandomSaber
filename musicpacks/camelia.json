@@ -1,0 +1,60 @@
+{
+  "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
+  "title": "Camelia",
+  "type": "ost",
+  "levels": [{
+	"song": "Cycle Hit",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Crystallized",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "What the Cat?!",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Exit the Earth's Atmosphere",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "GHOST",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }, {
+	"song": "Light It Up",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "1;2;3;4;5",
+	  "no": "1;2;3;4;5",
+	  "three": "1;2;3;4;5",
+	  "ninety": "1;2;3;4;5"
+	}
+  }]
+}

@@ -1,7 +1,6 @@
 {
   "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
   "title": "Interscope Mixtape",
-  "id": "mixtape",
   "type": "additive",
   "levels": [{
     "song": "Counting Stars",

@@ -1,9 +1,9 @@
 {
   "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
-  "title": "Beat Saber OST Vol.1",
-  "type": "ost",
+  "title": "Imagine Dragons",
+  "type": "additive",
   "levels": [{
-    "song": "$100 Bills",
+    "song": "Bad Liar",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -12,7 +12,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Balearic Pumping",
+    "song": "Believer",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -21,7 +21,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Beat Saber",
+    "song": "Digital",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -30,7 +30,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Breezer",
+    "song": "It's Time",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -39,7 +39,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Commercial Pumping",
+    "song": "Machine",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -48,7 +48,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Country Rounds",
+    "song": "Natural",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -57,7 +57,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Escape",
+    "song": "Radioactive",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -66,7 +66,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Legend",
+    "song": "Thunder",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -75,7 +75,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Lvl Insane",
+    "song": "Warriors",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
@@ -84,7 +84,7 @@
       "ninety": "1;2;3;4;5"
     }
   }, {
-    "song": "Turn Me On",
+    "song": "Whatever It Takes",
     "modes": {
       "two": "1;2;3;4;5",
       "one": "1;2;3;4;5",
