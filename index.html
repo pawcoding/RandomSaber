@@ -8,6 +8,10 @@
 
 	<link rel="stylesheet" href="/design.css">
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gugi&family=Teko:wght@300&display=swap" rel="stylesheet">
+
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -19,6 +23,8 @@
 	<meta name="theme-color" content="#000000">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/javascript/loadMusicpacks.js"></script>
+	<script src="/javascript/selectors.js"></script>
 </head>
 <body>
 	<header>
@@ -26,63 +32,61 @@
 		<h1>Saber</h1>
 	</header>
 
-	<script src="/javascript/loadMusicpacks.js"></script>
-
 	<main>
 		<section class="random">
-			<button id="randomize" onclick="randomize()">
+			<div id="randomize">
 				<img src="/reload.svg" alt="Neues Level" title="Neues Level auswählen">
-			</button>
-			<h2 id="level">No level selected</h2>
+			</div>
+			<h2 id="level">Loading Music Packs</h2>
 		</section>
 
-		<section class="packs">
-			<div class="flex" id="ost"></div>
-			<div class="flex" id="additive"></div>
+		<section id="packs">
+			<div class="flex packs" id="ost"></div>
+			<div class="flex packs" id="additive"></div>
 		</section>
 
-		<section class="settings">
-			<ul class="difficulty">
-				<li>
+		<section id="settings">
+			<ul class="difficulty settings">
+				<li class="setting">
 					<input type="radio" name="difficulty" value="easy" id="easy">
 					<label for="easy">Easy</label>
 				</li>
-				<li>
+				<li class="setting">
 					<input type="radio" name="difficulty" value="normal" id="normal">
 					<label for="normal">Normal</label>
 				</li>
-				<li>
+				<li class="setting">
 					<input type="radio" name="difficulty" value="hard" id="hard">
 					<label for="hard">Hard</label>
 				</li>
-				<li>
+				<li class="setting">
 					<input type="radio" name="difficulty" value="expert" id="expert" checked>
 					<label for="expert">Expert</label>
 				</li>
-				<li>
+				<li class="setting">
 					<input type="radio" name="difficulty" value="expert+" id="expert+">
 					<label for="expert+">Expert+</label>
 				</li>
 			</ul>
 
-			<ul class="mode">
-				<li>
+			<ul class="mode settings">
+				<li class="setting">
 					<input type="radio" name="mode" value="two" id="two" checked>
 					<label for="two">Two Sabers</label>
 				</li>
-				<li>
+				<li class="setting">
 					<input type="radio" name="mode" value="one" id="one">
 					<label for="one">One Saber</label>
 				</li>
-				<li>
+				<li class="setting">
 					<input type="radio" name="mode" value="no" id="no">
 					<label for="no">No Arrows</label>
 				</li>
-				<li>
+				<li class="setting">
 					<input type="radio" name="mode" value="three" id="three">
 					<label for="three">360°</label>
 				</li>
-				<li>
+				<li class="setting">
 					<input type="radio" name="mode" value="ninety" id="ninety">
 					<label for="ninety">90°</label>
 				</li>
@@ -91,11 +95,11 @@
 	</main>
 
 	<footer>
-		<a href="https://pawcode.de" id="pawcode">2021 pawcode</a> | <a href="https://pawcode.de/impressum">Impressum</a>
+		<a href="https://pawcode.de" id="pawcode">2021 pawcode Development</a> | <a href="https://pawcode.de/impressum">Impressum</a>
 	</footer>
 	<script>
 		$(function(){
-			$('#pawcode').text(new Date().getFullYear() + ' pawcode')
+			$('#pawcode').text(new Date().getFullYear() + ' pawcode Development')
 		})
 	</script>
 </body>

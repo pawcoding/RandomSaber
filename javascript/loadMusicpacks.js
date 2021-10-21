@@ -54,9 +54,16 @@ function finishLoading() {
 			<div class="pack">
 				<input type="checkbox" name="${pack.id}" value="${pack.id}" id="${pack.id}" ${pack.type === 'ost' ? 'checked' : ''}>
 				<label for="${pack.id}">
-					<img src="/covers/${pack.id}.jpg" title="${pack.title}" alt="${pack.title}">
+					<img src="/covers/${pack.id}.jpg" class="cover" title="${pack.title}" alt="${pack.title}">
 				</label>
 			</div>
 		`)
 	}
+
+	refreshSelectors()
+	$('.pack input').change(function(){
+		refreshSelectors()
+	})
+
+	$('#level').text('Ready to start')
 }
