@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://randomsaber.pawcode.de/schemas/modes.schema.json",
+  "$id": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/schemas/modes.schema.json",
   "title": "Modes",
   "description": "List in which modes / difficulties the level can be played",
   "type": "object",

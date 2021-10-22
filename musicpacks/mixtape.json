@@ -1,5 +1,5 @@
 {
-  "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
+  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/schemas/musicpack.schema.json",
   "title": "Interscope Mixtape",
   "type": "additive",
   "levels": [{

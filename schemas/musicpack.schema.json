@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
+  "$id": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/schemas/musicpack.schema.json",
   "title": "Music-Pack",
   "description": "A music-pack for RandomSaber website",
   "type": "object",
@@ -20,7 +20,7 @@
       "uniqueItems": true,
       "items": {
         "description": "Level in a music-pack",
-        "$ref": "https://randomsaber.pawcode.de/schemas/level.schema.json"
+        "$ref": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/schemas/level.schema.json"
       }
     }
   },

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://randomsaber.pawcode.de/schemas/level.schema.json",
+  "$id": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/schemas/level.schema.json",
   "title": "Level",
   "description": "Level in a music-pack",
   "type": "object",
@@ -11,7 +11,7 @@
 	},
 	"modes": {
 	  "description": "List in which modes / difficulties the level can be played",
-	  "$ref": "https://randomsaber.pawcode.de/schemas/modes.schema.json"
+	  "$ref": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/schemas/modes.schema.json"
 	}
   },
   "required": ["song", "modes"]

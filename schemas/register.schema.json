@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://randomsaber.pawcode.de/schemas/register.schema.json",
+  "$id": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/schemas/register.schema.json",
   "title": "Music-Pack Register",
   "description": "Register of all currently supported music-packs",
   "type": "object",

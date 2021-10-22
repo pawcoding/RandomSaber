@@ -1,5 +1,5 @@
 {
-  "$schema": "https://randomsaber.pawcode.de/schemas/register.schema.json",
+  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/schemas/register.schema.json",
   "packs": [
 	"vol1",
 	"vol2",
