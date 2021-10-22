@@ -1,9 +1,9 @@
 {
   "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
-  "title": "Monster Cat Vol.1",
+  "title": "Billie Eilish",
   "type": "additive",
   "levels": [{
-	"song": "Boundless",
+	"song": "all the good girls go to hell",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -11,8 +11,9 @@
 	  "three": "",
 	  "ninety": ""
 	}
-  }, {
-	"song": "Emoji VIP",
+  },
+  {
+	"song": "bad guy",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -20,17 +21,9 @@
 	  "three": "",
 	  "ninety": ""
 	}
-  }, {
-	"song": "Epic",
-	"modes": {
-	  "two": "1;2;3;4;5",
-	  "one": "",
-	  "no": "",
-	  "three": "4",
-	  "ninety": "4"
-	}
-  }, {
-	"song": "Feeling Stronger",
+  },
+  {
+	"song": "bellyache",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -38,26 +31,9 @@
 	  "three": "",
 	  "ninety": ""
 	}
-  }, {
-	"song": "Overkill",
-	"modes": {
-	  "two": "1;2;3;4;5",
-	  "one": "",
-	  "no": "",
-	  "three": "5",
-	  "ninety": "5"
-	}
-  }, {
-	"song": "Rattlesnake",
-	"modes": {
-	  "two": "1;2;3;4;5",
-	  "one": "",
-	  "no": "",
-	  "three": "5",
-	  "ninety": "5"
-	}
-  }, {
-	"song": "Stronger",
+  },
+  {
+	"song": "bury a friend",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -65,26 +41,59 @@
 	  "three": "",
 	  "ninety": ""
 	}
-  }, {
-	"song": "This Time",
-	"modes": {
-	  "two": "1;2;3;4;5",
-	  "one": "2;4:5",
-	  "no": "",
-	  "three": "",
-	  "ninety": ""
-	}
-  }, {
-	"song": "Till It's Over",
+  },
+  {
+	"song": "Happier Than Ever",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
 	  "no": "",
-	  "three": "1",
-	  "ninety": "1"
+	  "three": "",
+	  "ninety": ""
 	}
-  }, {
-	"song": "We Won't Be Alone",
+  },
+  {
+	"song": "I Didn´t Change My Number",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
+	}
+  },
+  {
+	"song": "NDA",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
+	}
+  },
+  {
+	"song": "Oxytocin",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
+	}
+  },
+  {
+	"song": "Therefore I Am",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
+	}
+  },
+  {
+	"song": "you should see me in a crown",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",

@@ -15,7 +15,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/favicon/site.webmanifest">
+	<!--link rel="manifest" href="/favicon/site.webmanifest"-->
 	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000">
 	<link rel="shortcut icon" href="/favicon/favicon.ico">
 	<meta name="msapplication-TileColor" content="#000000">
@@ -23,8 +23,9 @@
 	<meta name="theme-color" content="#000000">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="/javascript/loadMusicpacks.js"></script>
+	<script src="/javascript/load.js"></script>
 	<script src="/javascript/selectors.js"></script>
+	<script src="/javascript/randomize.js"></script>
 </head>
 <body>
 	<header>
@@ -48,23 +49,23 @@
 		<section id="settings">
 			<ul class="difficulty settings">
 				<li class="setting">
-					<input type="radio" name="difficulty" value="easy" id="easy">
+					<input type="radio" name="difficulty" value="1" id="easy">
 					<label for="easy">Easy</label>
 				</li>
 				<li class="setting">
-					<input type="radio" name="difficulty" value="normal" id="normal">
+					<input type="radio" name="difficulty" value="2" id="normal">
 					<label for="normal">Normal</label>
 				</li>
 				<li class="setting">
-					<input type="radio" name="difficulty" value="hard" id="hard">
+					<input type="radio" name="difficulty" value="3" id="hard">
 					<label for="hard">Hard</label>
 				</li>
 				<li class="setting">
-					<input type="radio" name="difficulty" value="expert" id="expert" checked>
+					<input type="radio" name="difficulty" value="4" id="expert" checked>
 					<label for="expert">Expert</label>
 				</li>
 				<li class="setting">
-					<input type="radio" name="difficulty" value="expert+" id="expert+">
+					<input type="radio" name="difficulty" value="5" id="expert+">
 					<label for="expert+">Expert+</label>
 				</li>
 			</ul>

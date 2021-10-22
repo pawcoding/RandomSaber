@@ -6,46 +6,46 @@
     "song": "Dumb Thingz",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "",
+      "ninety": ""
     }
   }, {
     "song": "Famous",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "",
+      "ninety": ""
     }
   }, {
     "song": "Has A Meaning",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "3",
+      "ninety": "3"
     }
   }, {
     "song": "What I Like",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "",
+      "ninety": ""
     }
   }, {
     "song": "While We're Young",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "2;4;5",
+      "no": "",
+      "three": "",
+      "ninety": ""
     }
   }]
 }

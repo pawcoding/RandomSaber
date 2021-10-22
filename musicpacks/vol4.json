@@ -6,37 +6,37 @@
 	"song": "Into The Dream",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
 	}
   }, {
 	"song": "It Takes Me",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
 	}
   }, {
 	"song": "LUDICROUS+",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
 	}
   }, {
 	"song": "Spin Eternally",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
 	}
   }]
 }

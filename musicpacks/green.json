@@ -6,55 +6,55 @@
     "song": "American Idiot",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "2;4;5",
+      "no": "",
+      "three": "",
+      "ninety": ""
     }
   }, {
     "song": "Boulevard of Broken Dreams",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "",
+      "ninety": ""
     }
   }, {
     "song": "Father of All...",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "2",
+      "ninety": "2"
     }
   }, {
     "song": "Holiday",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "3",
+      "ninety": "3"
     }
   }, {
     "song": "Fire, Ready, Aim",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "4",
+      "ninety": "4"
     }
   }, {
     "song": "Minority",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "",
+      "ninety": ""
     }
   }]
 }

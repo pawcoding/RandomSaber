@@ -6,37 +6,37 @@
     "song": "Emporer's New Clothes",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "4",
+      "ninety": "4"
     }
   }, {
     "song": "The Greatest Show",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "3",
+      "ninety": "3"
     }
   }, {
     "song": "High Hopes",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "2;4;5",
+      "no": "",
+      "three": "3",
+      "ninety": "3"
     }
   }, {
     "song": "Victorious",
     "modes": {
       "two": "1;2;3;4;5",
-      "one": "1;2;3;4;5",
-      "no": "1;2;3;4;5",
-      "three": "1;2;3;4;5",
-      "ninety": "1;2;3;4;5"
+      "one": "",
+      "no": "",
+      "three": "",
+      "ninety": ""
     }
   }]
 }

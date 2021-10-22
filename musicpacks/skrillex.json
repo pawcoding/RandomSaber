@@ -1,9 +1,9 @@
 {
   "$schema": "https://randomsaber.pawcode.de/schemas/musicpack.schema.json",
-  "title": "Camelia",
-  "type": "ost",
+  "title": "Skrillex Music Pack",
+  "type": "additive",
   "levels": [{
-	"song": "Cycle Hit",
+	"song": "Bangerang",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -12,7 +12,7 @@
 	  "ninety": ""
 	}
   }, {
-	"song": "Crystallized",
+	"song": "Butterflies",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -21,7 +21,7 @@
 	  "ninety": ""
 	}
   }, {
-	"song": "What the Cat?!",
+	"song": "Don´t Go",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -30,7 +30,7 @@
 	  "ninety": ""
 	}
   }, {
-	"song": "Exit this Earth's Atmosphere",
+	"song": "First of the Year",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -39,7 +39,7 @@
 	  "ninety": ""
 	}
   }, {
-	"song": "GHOST",
+	"song": "Ragga Bomb",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",
@@ -48,7 +48,25 @@
 	  "ninety": ""
 	}
   }, {
-	"song": "Light It Up",
+	"song": "Rock `n` Roll",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
+	}
+  }, {
+	"song": "Scary Monsters and Nice Spirits",
+	"modes": {
+	  "two": "1;2;3;4;5",
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
+	}
+  }, {
+	"song": "The Devil`s Den",
 	"modes": {
 	  "two": "1;2;3;4;5",
 	  "one": "",

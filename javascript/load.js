@@ -13,13 +13,13 @@ function loadRegister() {
 		success: function(data, status) {
 			console.log('| Fetched packs: "'+ data.packs.join('", "') + '"')
 			count = data.packs.length
-			loadMusicPacks(data.packs)
+			load(data.packs)
 		},
 		url: '/register.json'
 	})
 }
 
-function loadMusicPacks(packs) {
+function load(packs) {
 	console.log('| Loading packs')
 
 	let index = 0
@@ -58,11 +58,12 @@ function finishLoading() {
 				</label>
 			</div>
 		`)
+		levels += pack.levels.length
 	}
 
-	refreshSelectors()
+	changePacks()
 	$('.pack input').change(function(){
-		refreshSelectors()
+		changePacks()
 	})
 
 	$('#level').text('Ready to start')

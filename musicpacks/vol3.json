@@ -6,55 +6,55 @@
 	"song": "Origins",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "2;4;5",
+	  "no": "",
+	  "three": "2;4;5",
+	  "ninety": "2;4;5"
 	}
   }, {
 	"song": "Reason for Living",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "2;4;5",
+	  "no": "",
+	  "three": "5",
+	  "ninety": "5"
 	}
   }, {
 	"song": "Give A Little Love",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
 	}
   }, {
 	"song": "Immortal",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "",
+	  "no": "",
+	  "three": "2",
+	  "ninety": "2"
 	}
   }, {
 	"song": "Full Charge",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
 	}
   }, {
 	"song": "Burning Sands",
 	"modes": {
 	  "two": "1;2;3;4;5",
-	  "one": "1;2;3;4;5",
-	  "no": "1;2;3;4;5",
-	  "three": "1;2;3;4;5",
-	  "ninety": "1;2;3;4;5"
+	  "one": "",
+	  "no": "",
+	  "three": "",
+	  "ninety": ""
 	}
   }]
 }
