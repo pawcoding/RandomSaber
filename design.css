@@ -180,3 +180,38 @@ main {
 	text-align: center;
 	text-shadow: 3px 3px 1px black;
 }
+
+@media only screen and (max-width:820px) {
+	body {
+		font-size: 20px;
+		letter-spacing: 0.05rem;
+	}
+
+	#level {
+		margin-right: 92.281px;
+	}
+
+	#randomize {
+		cursor: pointer;
+		margin: 2px 15px;
+		padding: 3px 15px;
+	}
+
+	.setting {
+		padding: 10px;
+	}
+}
+
+@media only screen and (max-width:550px) {
+	.cover {
+		border-width: 2px;
+	}
+
+	.pack {
+		flex: 0 1 75px;
+	}
+
+	.setting {
+		padding: 5px;
+	}
+}

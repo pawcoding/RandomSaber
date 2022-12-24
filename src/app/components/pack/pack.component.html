@@ -1,0 +1,22 @@
+<div
+  *ngIf="pack"
+  [title]="pack.title"
+>
+  <input
+    type="checkbox"
+    class="hidden peer"
+    [name]="pack.id"
+    [id]="pack.id"
+    [checked]="true"
+  >
+
+  <label
+    class="block cursor-pointer rounded border-4 border-transparent transition-colors peer-checked:border-primary-800 hover:border-secondary-800"
+    [for]="pack.id"
+  >
+    <img
+      [src]="pack.img"
+      [alt]="pack.title"
+    >
+  </label>
+</div>

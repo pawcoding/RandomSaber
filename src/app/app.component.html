@@ -1,0 +1,28 @@
+<main
+  class="flex flex-col items-center
+    bg-[url('https://pbs.twimg.com/media/EmzBWX-XYAQyKFW.jpg')] bg-cover bg-center bg-fixed
+    h-screen overflow-scroll p-8 space-y-4 sm:space-y-8
+    scrollbar-thin scrollbar-thumb-white/40 scrollbar-track-white/20"
+>
+  <section>
+    <h1 class="text-center font-mono text-5xl text-white drop-shadow-2xl text-outline">Random<br>Saber</h1>
+  </section>
+
+  <section class="w-full max-w-3xl space-y-2 sm:space-y-4">
+    <div>
+      <app-to-play></app-to-play>
+    </div>
+
+    <div>
+      <app-music-packs></app-music-packs>
+    </div>
+
+    <div>
+      <app-difficulty [selected]="difficulty"></app-difficulty>
+    </div>
+
+    <div>
+      <app-mode [selected]="mode"></app-mode>
+    </div>
+  </section>
+</main>

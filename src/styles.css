@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  * {
+    @apply accent-accent-500;
+  }
+
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    @apply select-none bg-gray-200 text-base text-primary-800;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply rounded-lg bg-white/40 bg-clip-padding p-2 shadow-lg backdrop-blur sm:p-4;
+  }
+
+  .text-outline {
+    text-shadow:
+      -1px -1px 0 #F14674,
+      1px -1px 0 #F14674,
+      -1px 1px 0 #F14674,
+      1px 1px 0 #F14674;
+  }
+}

@@ -1,0 +1,15 @@
+<article class="glass space-y-2 sm:space-y-4">
+  <section class="grid grid-cols-5 gap-2 sm:gap-4">
+    <app-pack
+      *ngFor="let pack of originals"
+      [pack]="pack"
+    ></app-pack>
+  </section>
+
+  <section class="grid grid-cols-5 gap-2 sm:gap-4 md:grid-cols-6 lg:grid-cols-7">
+    <app-pack
+      *ngFor="let pack of added"
+      [pack]="pack"
+    ></app-pack>
+  </section>
+</article>

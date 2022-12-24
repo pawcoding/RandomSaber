@@ -1,0 +1,28 @@
+<article class="glass">
+  <h2 class="sr-only">Difficulty</h2>
+
+  <ul
+    class="flex items-center justify-around gap-2 text-center text-2xl font-bold sm:gap-4"
+  >
+    <li
+      class="w-full"
+      *ngFor="let difficulty of Difficulty | keyvalue: originalOrder"
+    >
+      <input
+        type="radio"
+        name="difficulty"
+        class="hidden peer"
+        [value]="difficulty.value"
+        [id]="difficulty.key"
+        [checked]="difficulty.value === selected"
+      >
+
+      <label
+        class="cursor-pointer drop-shadow-sm peer-checked:text-accent-800 hover:text-secondary-800 transition-colors"
+        [for]="difficulty.key"
+      >
+        {{difficulty.value}}
+      </label>
+    </li>
+  </ul>
+</article>
