@@ -1,0 +1,48 @@
+{
+  "id": "ost4",
+  "title": "Original Soundtrack Vol. 4",
+  "type": "OST",
+  "img": "https://beatsaber.com/images/music/music11.jpg",
+  "songs": [
+    {
+      "title": "Into The Dream",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "It Takes Me",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "LUDICROUS+",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Spin Eternally",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    }
+  ]
+}

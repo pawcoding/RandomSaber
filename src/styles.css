@@ -16,6 +16,14 @@
   body {
     @apply select-none bg-gray-200 text-base text-primary-800;
   }
+
+  h2 {
+    @apply mt-8 mb-2 text-2xl font-bold;
+  }
+
+  h3 {
+    @apply mt-4 mb-2 text-lg font-semibold;
+  }
 }
 
 @layer utilities {

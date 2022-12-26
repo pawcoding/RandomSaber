@@ -1,15 +1,45 @@
-<article class="glass space-y-2 sm:space-y-4">
-  <section class="grid grid-cols-5 gap-2 sm:gap-4">
-    <app-pack
-      *ngFor="let pack of originals"
-      [pack]="pack"
-    ></app-pack>
+<article>
+  <h2>Song Pool</h2>
+
+
+  <h3>Original Sound Tracks</h3>
+
+  <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
+    <div
+      *ngFor="let pack of packs"
+    >
+      <app-pack
+        *ngIf="pack.type === 'OST'"
+        [pack]="pack"
+      ></app-pack>
+    </div>
   </section>
 
-  <section class="grid grid-cols-5 gap-2 sm:gap-4 md:grid-cols-6 lg:grid-cols-7">
-    <app-pack
-      *ngFor="let pack of added"
-      [pack]="pack"
-    ></app-pack>
+
+  <h3>Official Addons</h3>
+
+  <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
+    <div
+      *ngFor="let pack of packs"
+    >
+      <app-pack
+        *ngIf="pack.type === 'ADDON'"
+        [pack]="pack"
+      ></app-pack>
+    </div>
+  </section>
+
+
+  <h3>Custom Songs</h3>
+
+  <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
+    <div
+      *ngFor="let pack of packs"
+    >
+      <app-pack
+        *ngIf="pack.type === 'CUSTOM'"
+        [pack]="pack"
+      ></app-pack>
+    </div>
   </section>
 </article>

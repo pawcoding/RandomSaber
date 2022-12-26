@@ -1,5 +1,6 @@
 <div
   *ngIf="pack"
+  class="h-full"
   [title]="pack.title"
 >
   <input
@@ -11,12 +12,24 @@
   >
 
   <label
-    class="block cursor-pointer rounded border-4 border-transparent transition-colors peer-checked:border-primary-800 hover:border-secondary-800"
+    class="block h-full cursor-pointer items-center overflow-clip rounded-lg bg-gray-100 shadow-lg transition-colors group hover:bg-gray-50 sm:grid grid-cols-[6rem_1fr]"
     [for]="pack.id"
+    (contextmenu)="toggleAllActive($event)"
   >
-    <img
-      [src]="pack.img"
-      [alt]="pack.title"
+    <div
+      class="h-24 w-full bg-cover bg-center brightness-100 saturate-100 transition-all max-w-24 group-hover:brightness-125 group-hover:saturate-125 sm:w-24 sm:max-w-none"
+      [style.background-image]="'url(' + pack.img + ')'"
     >
+    </div>
+
+    <div class="flex grow flex-col justify-between p-2 text-sm sm:h-24 sm:justify-around sm:pr-4">
+      <p class="font-semibold text-primary-500">
+        {{pack.title}}
+      </p>
+
+      <p class="mt-2 text-right text-accent-600 sm:mt-0">
+        <span class="font-bold text-accent-700">{{active}}/{{pack.songs.length}}</span> Songs
+      </p>
+    </div>
   </label>
 </div>

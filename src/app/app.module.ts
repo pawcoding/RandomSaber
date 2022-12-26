@@ -7,6 +7,7 @@ import { ModeComponent } from './components/mode/mode.component';
 import { ToPlayComponent } from './components/to-play/to-play.component';
 import { MusicPacksComponent } from './components/music-packs/music-packs.component';
 import { PackComponent } from './components/pack/pack.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PackComponent } from './components/pack/pack.component';
     PackComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

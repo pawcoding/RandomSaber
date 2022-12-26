@@ -1,0 +1,68 @@
+{
+  "id": "ost3",
+  "title": "Original Soundtrack Vol. 3",
+  "type": "OST",
+  "img": "https://beatsaber.com/images/music/OST3.jpg",
+  "songs": [
+    {
+      "title": "Origins",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 11010,
+        "noArrows": 0,
+        "full": 11010,
+        "quarter": 11010
+      }
+    },
+    {
+      "title": "Reason for Living",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 11010,
+        "noArrows": 0,
+        "full": 10000,
+        "quarter": 10000
+      }
+    },
+    {
+      "title": "Give A Little Love",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Immortal",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 10,
+        "quarter": 10
+      }
+    },
+    {
+      "title": "Full Charge",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Burning Sands",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    }
+  ]
+}

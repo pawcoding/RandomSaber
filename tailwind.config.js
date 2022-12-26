@@ -14,8 +14,14 @@ module.exports = {
         transparent: '#00000000'
       },
       fontFamily: {
-        mono: ['Gugi', 'Teko', ...defaultTheme.fontFamily.sans],
-        sans: ['Teko', ...defaultTheme.fontFamily.sans]
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans]
+      },
+      gridTemplateColumns: {
+        sm: 'repeat(auto-fit, minmax(8rem, 1fr))',
+        DEFAULT: 'repeat(auto-fit, minmax(15rem, 1fr))'
+      },
+      saturate: {
+        125: '1.25'
       }
     }
   },
