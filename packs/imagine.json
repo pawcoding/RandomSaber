@@ -1,0 +1,103 @@
+{
+  "id": "imagine",
+  "title": "Imagine Dragons",
+  "type": "ADDON",
+  "img": "https://beatsaber.com/images/music/ID.jpg",
+  "songs": [
+    {
+      "title": "Bad Liar",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Believer",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 11010,
+        "noArrows": 0,
+        "full": 110,
+        "quarter": 110
+      }
+    },
+    {
+      "title": "Digital",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 1000,
+        "quarter": 1000
+      }
+    },
+    {
+      "title": "It's Time",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Machine",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },{
+      "title": "Natural",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },{
+      "title": "Radioactive",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },{
+      "title": "Thunder",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 11010,
+        "noArrows": 0,
+        "full": 100,
+        "quarter": 100
+      }
+    },{
+      "title": "Warriors",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },{
+      "title": "Whatever It Takes",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    }
+  ]
+}

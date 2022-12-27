@@ -7,7 +7,7 @@ import {Pack} from "../interfaces/Pack";
 })
 export class PackLoaderService {
 
-  private dataUrl = 'http://localhost:4201'
+  private dataUrl = 'https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs'
 
   private register = ''
 

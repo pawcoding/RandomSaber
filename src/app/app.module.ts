@@ -8,6 +8,7 @@ import { ToPlayComponent } from './components/to-play/to-play.component';
 import { MusicPacksComponent } from './components/music-packs/music-packs.component';
 import { PackComponent } from './components/pack/pack.component';
 import {HttpClientModule} from "@angular/common/http";
+import { SongSelectorComponent } from './components/song-selector/song-selector.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from "@angular/common/http";
     ModeComponent,
     ToPlayComponent,
     MusicPacksComponent,
-    PackComponent
+    PackComponent,
+    SongSelectorComponent
   ],
   imports: [
     BrowserModule,

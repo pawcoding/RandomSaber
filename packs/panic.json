@@ -1,0 +1,48 @@
+{
+  "id": "panic",
+  "title": "Panic! At The Disco",
+  "type": "ADDON",
+  "img": "https://beatsaber.com/images/music/music5.jpg",
+  "songs": [
+    {
+      "title": "Emporer's New Clothes",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 1000,
+        "quarter": 1000
+      }
+    },
+    {
+      "title": "The Greatest Show",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 100,
+        "quarter": 100
+      }
+    },
+    {
+      "title": "High Hopes",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 11010,
+        "noArrows": 0,
+        "full": 100,
+        "quarter": 100
+      }
+    },
+    {
+      "title": "Victorious",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    }
+  ]
+}
