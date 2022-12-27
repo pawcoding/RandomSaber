@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Pack} from "../../interfaces/Pack";
 import {SongSelectorService} from "../../services/song-selector.service";
+import {PackLoaderService} from "../../services/pack-loader.service";
 
 @Component({
   selector: 'app-pack',
@@ -14,7 +15,8 @@ export class PackComponent implements OnInit {
   active = 0
 
   constructor(
-    private songSelectorService: SongSelectorService
+    private songSelectorService: SongSelectorService,
+    private packLoaderService: PackLoaderService
   ) {
     songSelectorService.changeEvent.subscribe(_ => this.refreshActive())
   }
@@ -25,6 +27,7 @@ export class PackComponent implements OnInit {
 
   refreshActive() {
     this.active = this.pack?.songs.filter(song => song.active).length || 0
+    this.packLoaderService.changeEmitter.emit(this.pack)
   }
 
   toggleAllActive($event: MouseEvent | undefined): void {
@@ -35,7 +38,7 @@ export class PackComponent implements OnInit {
     else
       this.pack?.songs.forEach(song => song.active = true)
 
-    this.refreshActive()
+    this.songSelectorService.changeEvent.emit()
   }
 
   openSongSelection(pack: Pack) {

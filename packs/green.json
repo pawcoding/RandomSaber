@@ -1,0 +1,68 @@
+{
+  "id": "green",
+  "title": "Green Day",
+  "type": "ADDON",
+  "img": "https://beatsaber.com/images/music/music7.jpg",
+  "songs": [
+    {
+      "title": "American Idiot",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 11010,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Boulevard of Broken Dreams",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Father of All...",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 10,
+        "quarter": 10
+      }
+    },
+    {
+      "title": "Holiday",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 100,
+        "quarter": 100
+      }
+    },
+    {
+      "title": "Fire, Ready, Aim",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 1000,
+        "quarter": 1000
+      }
+    },
+    {
+      "title": "Minority",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    }
+  ]
+}

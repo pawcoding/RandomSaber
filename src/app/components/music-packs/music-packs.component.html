@@ -6,10 +6,9 @@
 
   <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
     <div
-      *ngFor="let pack of packs"
+      *ngFor="let pack of osts"
     >
       <app-pack
-        *ngIf="pack.type === 'OST'"
         [pack]="pack"
       ></app-pack>
     </div>
@@ -20,10 +19,9 @@
 
   <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
     <div
-      *ngFor="let pack of packs"
+      *ngFor="let pack of addons"
     >
       <app-pack
-        *ngIf="pack.type === 'ADDON'"
         [pack]="pack"
       ></app-pack>
     </div>
