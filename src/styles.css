@@ -14,7 +14,7 @@
   }
 
   body {
-    @apply select-none bg-gray-200 text-base text-primary-800;
+    @apply select-none bg-gray-200 text-base text-primary-800 dark:text-gray-50 dark:bg-gray-800;
   }
 
   h2 {
@@ -23,19 +23,5 @@
 
   h3 {
     @apply mt-4 mb-2 text-lg font-semibold;
-  }
-}
-
-@layer utilities {
-  .glass {
-    @apply rounded-lg bg-white/40 bg-clip-padding p-2 shadow-lg backdrop-blur sm:p-4;
-  }
-
-  .text-outline {
-    text-shadow:
-      -1px -1px 0 #F14674,
-      1px -1px 0 #F14674,
-      -1px 1px 0 #F14674,
-      1px 1px 0 #F14674;
   }
 }

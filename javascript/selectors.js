@@ -34,7 +34,7 @@ function applySettingsAndPacks() {
 		if ($('#' + id).prop('checked')) {
 			for (const level of register[id].levels) {
 				if (level.modes[mode].includes(difficulty))
-					levels.push(register[id].title + ': ' + level.song)
+					levels.push(register[id].title.replace(/ /g, '\xa0') + ': ' + level.song.replace(/ /g, '\xa0'))
 			}
 		}
 	}

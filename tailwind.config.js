@@ -5,6 +5,7 @@ module.exports = {
   content: [
     './src/**/*.{html,ts}'
   ],
+  darkMode: 'class',
   theme: {
     colors: require('./tailwind.colors'),
     extend: {
