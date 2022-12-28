@@ -55,9 +55,6 @@ export class PackLoaderService {
 
         try {
           const saved = this.loadPackFromStorage(packID)
-
-          console.log(saved)
-
           pack.songs.forEach(song => song.active = saved.songs.find(s => s.number === song.number)?.active || false)
         } catch (_) {
           if (pack.type === 'OST')

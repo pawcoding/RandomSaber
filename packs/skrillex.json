@@ -1,32 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
-  "id": "ost3",
-  "title": "Original Soundtrack Vol. 3",
-  "type": "OST",
-  "img": "https://beatsaber.com/images/music/OST3.jpg",
+  "id": "skrillex",
+  "title": "Skrillex",
+  "type": "ADDON",
+  "img": "https://beatsaber.com/images/music/music13.jpg",
   "songs": [
     {
-      "title": "Origins",
-      "modes": {
-        "twoSabers": 11111,
-        "oneSaber": 11010,
-        "noArrows": 0,
-        "full": 11010,
-        "quarter": 11010
-      }
-    },
-    {
-      "title": "Reason for Living",
-      "modes": {
-        "twoSabers": 11111,
-        "oneSaber": 11010,
-        "noArrows": 0,
-        "full": 10000,
-        "quarter": 10000
-      }
-    },
-    {
-      "title": "Give A Little Love",
+      "title": "Bangerang",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -36,17 +16,7 @@
       }
     },
     {
-      "title": "Immortal",
-      "modes": {
-        "twoSabers": 11111,
-        "oneSaber": 0,
-        "noArrows": 0,
-        "full": 10,
-        "quarter": 10
-      }
-    },
-    {
-      "title": "Full Charge",
+      "title": "Butterflies",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -56,7 +26,57 @@
       }
     },
     {
-      "title": "Burning Sands",
+      "title": "Don't Go",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "First of the Year",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Ragga Bomb",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Rock 'n' Roll",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Scary Monsters and Nice Spirits",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "The Devil's Den",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,

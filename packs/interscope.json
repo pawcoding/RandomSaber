@@ -1,32 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
-  "id": "ost3",
-  "title": "Original Soundtrack Vol. 3",
-  "type": "OST",
-  "img": "https://beatsaber.com/images/music/OST3.jpg",
+  "id": "interscope",
+  "title": "Interscope Mixtape",
+  "type": "ADDON",
+  "img": "https://beatsaber.com/images/music/music12.jpg",
   "songs": [
     {
-      "title": "Origins",
-      "modes": {
-        "twoSabers": 11111,
-        "oneSaber": 11010,
-        "noArrows": 0,
-        "full": 11010,
-        "quarter": 11010
-      }
-    },
-    {
-      "title": "Reason for Living",
-      "modes": {
-        "twoSabers": 11111,
-        "oneSaber": 11010,
-        "noArrows": 0,
-        "full": 10000,
-        "quarter": 10000
-      }
-    },
-    {
-      "title": "Give A Little Love",
+      "title": "Counting Stars",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -36,17 +16,7 @@
       }
     },
     {
-      "title": "Immortal",
-      "modes": {
-        "twoSabers": 11111,
-        "oneSaber": 0,
-        "noArrows": 0,
-        "full": 10,
-        "quarter": 10
-      }
-    },
-    {
-      "title": "Full Charge",
+      "title": "DNA.",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -56,7 +26,47 @@
       }
     },
     {
-      "title": "Burning Sands",
+      "title": "Don't Cha",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Party Rock Anthem",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Rollin' (Air Raid Vehicle)",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Sugar",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "The Sweet Escape",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,

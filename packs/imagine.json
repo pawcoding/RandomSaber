@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
   "id": "imagine",
   "title": "Imagine Dragons",
   "type": "ADDON",

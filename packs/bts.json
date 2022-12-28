@@ -1,12 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
-  "id": "linkin",
-  "title": "Linkin Park",
+  "id": "bts",
+  "title": "BTS",
   "type": "ADDON",
-  "img": "https://beatsaber.com/images/music/music9.jpg",
+  "img": "https://beatsaber.com/images/music/music10.jpg",
   "songs": [
     {
-      "title": "Bleed It Out",
+      "title": "Blood Sweat & Tears",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -16,7 +16,7 @@
       }
     },
     {
-      "title": "Breaking the Habit",
+      "title": "Boy With Luv",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -26,7 +26,7 @@
       }
     },
     {
-      "title": "Faint",
+      "title": "Burning Up",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -36,7 +36,7 @@
       }
     },
     {
-      "title": "Given Up",
+      "title": "Dionysus",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -46,7 +46,7 @@
       }
     },
     {
-      "title": "In the End",
+      "title": "DNA",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -56,7 +56,7 @@
       }
     },
     {
-      "title": "New Divide",
+      "title": "Dope",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -66,7 +66,7 @@
       }
     },
     {
-      "title": "Numb",
+      "title": "Dynamite",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -76,7 +76,7 @@
       }
     },
     {
-      "title": "One Step Closer",
+      "title": "Fake Love",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -86,7 +86,7 @@
       }
     },
     {
-      "title": "Papercut",
+      "title": "IDOL",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -96,7 +96,7 @@
       }
     },
     {
-      "title": "Somewhere I Belong",
+      "title": "Mic Drop",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
@@ -106,7 +106,17 @@
       }
     },
     {
-      "title": "What I've Done",
+      "title": "Not Today",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "UGH!",
       "modes": {
         "twoSabers": 11111,
         "oneSaber": 0,
