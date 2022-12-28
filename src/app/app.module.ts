@@ -9,6 +9,7 @@ import { MusicPacksComponent } from './components/music-packs/music-packs.compon
 import { PackComponent } from './components/pack/pack.component';
 import {HttpClientModule} from "@angular/common/http";
 import { SongSelectorComponent } from './components/song-selector/song-selector.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,10 +21,12 @@ import { SongSelectorComponent } from './components/song-selector/song-selector.
     PackComponent,
     SongSelectorComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
