@@ -1,13 +1,31 @@
-<article class="flex gap-2 sm:gap-4">
-  <div class="glass">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"
-         class="h-6 w-6 cursor-pointer drop-shadow-sm transition-colors hover:text-secondary-800">
+<article
+  class="p-2 flex items-center gap-2 sm:gap-4 rounded-lg bg-gray-100 shadow transition-all text-primary-600 hover:bg-gray-50 hover:shadow-lg peer-focus:shadow-lg dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
+>
+  <div
+    class="flex cursor-pointer items-center justify-center h-12 w-12 peer focus:ring-0 hover:drop-shadow-sm focus:drop-shadow-sm"
+    tabindex="1"
+    title="Draw a random song"
+    (click)="selectRandomSong()"
+    (keydown.space)="selectRandomSong($event)"
+    (keydown.enter)="selectRandomSong($event)"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+         class="h-8 w-8">
       <path stroke-linecap="round" stroke-linejoin="round"
             d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
     </svg>
+
   </div>
 
-  <div class="w-full rounded-lg p-4 shadow-lg glass">
+  <div
+    class="w-full text-center"
+  >
+    <p class="font-semibold">
+      {{song.title}}
+    </p>
 
+    <p class="text-accent-700 dark:text-accent-300">
+      {{song.pack}}
+    </p>
   </div>
 </article>

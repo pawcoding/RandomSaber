@@ -8,13 +8,17 @@
   </section>
 
   <section class="w-full">
-    <!--div>
-      <app-to-play></app-to-play>
-    </div-->
+    <div class="mx-auto max-w-screen-md">
+      <app-to-play [songs]="songs"></app-to-play>
+    </div>
+
+    <span class="mx-auto my-8 block max-w-screen-sm">
+      <hr class="mx-4 rounded-full border-t-2 border-t-primary-300">
+    </span>
 
     <div class="mx-auto max-w-screen-md">
       <div class="flex items-baseline">
-        <h2>Settings</h2>
+        <h2 class="mt-0">Settings</h2>
 
         <p class="ml-auto text-primary-700">
           <span class="font-semibold">

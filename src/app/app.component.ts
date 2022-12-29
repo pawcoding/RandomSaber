@@ -65,6 +65,9 @@ export class AppComponent {
   }
 
   private isPlayable(song: Song, difficultyNumber: number): boolean {
+    if (!song.active)
+      return false
+
     const modeNumber = iswitch(this.mode,
       [Mode.TWO_SABERS, () => song.modes.twoSabers],
       [Mode.ONE_SABER, () => song.modes.oneSaber],
@@ -73,7 +76,7 @@ export class AppComponent {
       [Mode.QUARTER, () => song.modes.quarter]
     ) || 0
 
-    return song.active && (modeNumber / difficultyNumber) % 10 >= 1
+    return (modeNumber / difficultyNumber) % 10 >= 1
   }
 
   changeDifficulty(difficulty: Difficulty) {
