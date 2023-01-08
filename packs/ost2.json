@@ -1,0 +1,59 @@
+{
+  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
+  "id": "ost2",
+  "title": "Original Soundtrack Vol. 2",
+  "type": "OST",
+  "img": "https://beatsaber.com/images/music/music2.jpg",
+  "songs": [
+    {
+      "title": "Unlimited Power",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 11010,
+        "noArrows": 1111,
+        "full": 1000,
+        "quarter": 1000
+      }
+    },
+    {
+      "title": "Rum n' Bass",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 10000,
+        "quarter": 10000
+      }
+    },
+    {
+      "title": "Be There For You",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Elixia",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "I Need You",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 1,
+        "quarter": 1
+      }
+    }
+  ]
+}

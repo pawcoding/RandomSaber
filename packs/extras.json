@@ -1,0 +1,69 @@
+{
+  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
+  "id": "extras",
+  "title": "Extras",
+  "type": "OST",
+  "img": "https://static.wikia.nocookie.net/beat-saber/images/2/23/Extras_Cover.png",
+  "songs": [
+    {
+      "title": "Spooky Beat",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 0,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "FitBeat",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 0,
+        "full": 1110,
+        "quarter": 1000
+      }
+    },
+    {
+      "title": "Crab Rave",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 0,
+        "full": 100,
+        "quarter": 100
+      }
+    },
+    {
+      "title": "POP/STARS - K/DA",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 0,
+        "full": 10000,
+        "quarter": 10000
+      }
+    },
+    {
+      "title": "One Hope",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 0,
+        "full": 0,
+        "quarter": 0
+      }
+    },
+    {
+      "title": "Angel Voices",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 0,
+        "quarter": 0
+      }
+    }
+  ]
+}

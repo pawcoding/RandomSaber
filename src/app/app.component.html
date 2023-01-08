@@ -1,0 +1,102 @@
+<main
+  class="flex flex-col items-center
+    h-screen overflow-scroll p-8 space-y-4 sm:space-y-8
+    scrollbar-thin scrollbar-thumb-primary-500 dark:scrollbar-thumb-gray-600 scrollbar-track-primary-200 dark:scrollbar-track-transparent"
+>
+  <section>
+    <h1 class="text-center font-mono text-5xl drop-shadow-2xl">Random<br>Saber</h1>
+  </section>
+
+  <section class="w-full">
+    <div class="mx-auto max-w-screen-md">
+      <app-to-play [songs]="songs"></app-to-play>
+    </div>
+
+    <span class="mx-auto my-8 block max-w-screen-sm">
+      <hr class="mx-4 rounded-full border-t-2 border-t-primary-300">
+    </span>
+
+    <div class="mx-auto max-w-screen-md">
+      <div class="flex items-baseline">
+        <h2 class="mt-0">Settings</h2>
+
+        <p class="ml-auto text-primary-700">
+          <span class="font-semibold">
+            {{songs.length}}
+          </span> Songs
+        </p>
+      </div>
+
+      <article class="flex gap-2 sm:gap-4">
+        <select
+          name="mode"
+          class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-colors transition-shadow text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
+          title="Select a mode to play"
+          (ngModelChange)="changeMode($event)"
+          [(ngModel)]="mode"
+        >
+          <option
+            *ngFor="let modeItem of Mode | keyvalue: originalOrder"
+            [ngValue]="modeItem.value"
+          >
+            {{modeItem.value}}
+          </option>
+        </select>
+
+        <select
+          name="difficulty"
+          class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-colors transition-shadow text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
+          title="Select your difficulty level"
+          (ngModelChange)="changeDifficulty($event)"
+          [(ngModel)]="difficulty"
+        >
+          <option
+            *ngFor="let difficultyItem of Difficulty | keyvalue: originalOrder"
+            [ngValue]="difficultyItem.value"
+          >
+            {{difficultyItem.value}}
+          </option>
+        </select>
+      </article>
+    </div>
+
+    <span class="mx-auto my-8 block max-w-screen-sm">
+      <hr class="mx-4 rounded-full border-t-2 border-t-primary-300">
+    </span>
+
+    <div class="mx-auto max-w-screen-2xl">
+      <app-music-packs></app-music-packs>
+    </div>
+  </section>
+
+  <app-song-selector></app-song-selector>
+
+  <footer
+    class="flex gap-4 flex-col sm:flex-row items-center justify-around text-center w-full max-w-screen-2xl mx-auto mt-10"
+  >
+    <a
+      href="https://github.com/pawcoding/randomsaber"
+      rel="noreferrer noopener"
+      target="_blank"
+      title="View source code on GitHub"
+    >
+      View on GitHub
+    </a>
+
+    <span class="cursor-default">
+      Version {{version}}
+    </span>
+
+    <a
+      href="https://pawcode.de/"
+      target="_blank"
+      title="Created by pawcode Development"
+    >
+      <img
+        height="32" width="139"
+        alt="pawcode&nbsp;Development"
+        src="/assets/pawcode.svg"
+      >
+    </a>
+  </footer>
+</main>

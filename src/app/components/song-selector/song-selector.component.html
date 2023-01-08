@@ -1,0 +1,77 @@
+<div
+  *ngIf="pack"
+  class="fixed top-0 left-0 z-10 h-screen w-screen bg-black/50 backdrop-blur-sm"
+>
+  <div
+    class="flex h-full w-full items-center justify-center p-4"
+    (click)="closeSongSelector()"
+  >
+    <article
+      class="relative w-full max-w-xl rounded-lg bg-gray-50 dark:bg-gray-800 p-4"
+      (click)="$event.stopPropagation()"
+    >
+      <span
+        class="absolute top-0 right-0 -translate-y-full cursor-pointer p-2 text-gray-50 dark:text-gray-200 hover:text-accent-200 dark:hover:text-accent-400 transition-colors"
+        title="Close"
+        (click)="closeSongSelector()"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 drop-shadow">
+          <path
+            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/>
+        </svg>
+      </span>
+
+      <section class="flex">
+        <img
+          class="h-20 w-20 rounded shadow object-cover"
+          [src]="pack.img"
+          [alt]="pack.title"
+        >
+
+        <div class="flex h-20 grow flex-col justify-between px-4 text-sm">
+          <h3 class="m-0 text-primary-500 dark:text-primary-300">
+            {{pack.title}}
+          </h3>
+
+          <p
+            class="cursor-pointer text-accent-600 dark:text-accent-300 ml-auto"
+            [title]="(allActive ? 'Remove' : 'Add') + ' all ' + pack.songs.length + ' Songs'"
+            (click)="toggleAllActive()"
+          >
+            <span class="font-bold text-accent-700 dark:text-accent-300">
+              {{active}}/{{pack.songs.length}}
+            </span> Songs
+          </p>
+        </div>
+      </section>
+
+      <hr class="my-4 border-t-2 border-t-primary-100 dark:border-t-primary-300 rounded-full">
+
+      <section #scrollContainer
+        class="sm:max-h-96 max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-primary-100 dark:scrollbar-thumb-primary-300 rounded pb-1"
+      >
+        <div #scrollContent
+          class="grid gap-2 sm:grid-cols-2">
+          <label
+            *ngFor="let song of pack.songs"
+            class="flex cursor-pointer items-center rounded-md bg-white dark:bg-gray-900 px-4 py-2 shadow transition-shadow hover:shadow-md"
+            [for]="song.number"
+            [title]="(song.active ? 'Remove' : 'Add') + ' &quot;' + song.title + '&quot;'"
+          >
+            <input
+              type="checkbox"
+              class="mr-2 h-4 w-4 cursor-pointer rounded text-primary-600 border-primary-200 dark:border-primary-400 bg-primary-100 dark:bg-primary-300 focus:ring-0 focus:ring-offset-0"
+              [checked]="song.active"
+              [id]="song.number"
+              (click)="toggleActive(song, $event)"
+            >
+
+            <p>
+              {{song.title}}
+            </p>
+          </label>
+        </div>
+      </section>
+    </article>
+  </div>
+</div>

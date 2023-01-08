@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
+  "type": "object",
+  "default": {},
+  "title": "Music Pack Schema",
+  "required": [
+    "id",
+    "title",
+    "type",
+    "img",
+    "songs"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "The packs unique ID"
+    },
+    "title": {
+      "type": "string",
+      "title": "The title of the music pack / mixtape"
+    },
+    "type": {
+      "type": "string",
+      "default": "ADDON",
+      "title": "The type of the pack",
+      "enum": ["OST", "ADDON", "CUSTOM"]
+    },
+    "img": {
+      "type": "string",
+      "title": "The url to the cover art of the pack"
+    },
+    "songs": {
+      "type": "array",
+      "title": "List of all songs from this pack",
+      "items": {
+        "type": "object",
+        "title": "Song",
+        "required": [
+          "title",
+          "modes"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Song title"
+          },
+          "modes": {
+            "type": "object",
+            "title": "List of all modes including playable difficulties",
+            "required": [
+              "twoSabers",
+              "oneSaber",
+              "noArrows",
+              "full",
+              "quarter"
+            ],
+            "properties": {
+              "twoSabers": {
+                "type": "integer",
+                "title": "Playable difficulties with two sabers"
+              },
+              "oneSaber": {
+                "type": "integer",
+                "title": "Playable difficulties with one saber"
+              },
+              "noArrows": {
+                "type": "integer",
+                "title": "Playable difficulties with no arrows"
+              },
+              "full": {
+                "type": "integer",
+                "title": "Playable difficulties with 360° view"
+              },
+              "quarter": {
+                "type": "integer",
+                "title": "Playable difficulties with 90° view"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

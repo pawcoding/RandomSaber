@@ -1,0 +1,40 @@
+<article>
+  <h2 class="mx-auto max-w-screen-md">Song Pool</h2>
+
+  <h3 class="mx-auto mt-0 max-w-screen-md">Original Sound Tracks</h3>
+
+  <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
+    <div
+      *ngFor="let pack of osts"
+    >
+      <app-pack
+        [pack]="pack"
+      ></app-pack>
+    </div>
+  </section>
+
+  <h3 class="mx-auto max-w-screen-md">Official Addons</h3>
+
+  <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
+    <div
+      *ngFor="let pack of addons"
+    >
+      <app-pack
+        [pack]="pack"
+      ></app-pack>
+    </div>
+  </section>
+
+  <!--h3 class="mx-auto max-w-screen-md">Custom Songs</h3>
+
+  <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
+    <div
+      *ngFor="let pack of packs"
+    >
+      <app-pack
+        *ngIf="pack.type === 'CUSTOM'"
+        [pack]="pack"
+      ></app-pack>
+    </div>
+  </section-->
+</article>

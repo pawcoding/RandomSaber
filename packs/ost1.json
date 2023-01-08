@@ -1,0 +1,109 @@
+{
+  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
+  "id": "ost1",
+  "title": "Original Soundtrack Vol. 1",
+  "type": "OST",
+  "img": "https://beatsaber.com/images/music/music1.jpg",
+  "songs": [
+    {
+      "title": "$100 Bills",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 10,
+        "quarter": 10
+      }
+    },
+    {
+      "title": "Balearic Pumping",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 10000,
+        "quarter": 10000
+      }
+    },
+    {
+      "title": "Beat Saber",
+      "modes": {
+        "twoSabers": 1111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 1,
+        "quarter": 1
+      }
+    },
+    {
+      "title": "Breezer",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 10000,
+        "quarter": 10000
+      }
+    },
+    {
+      "title": "Commercial Pumping",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 10,
+        "quarter": 10
+      }
+    },
+    {
+      "title": "Country Rounds",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 1000,
+        "quarter": 1000
+      }
+    },
+    {
+      "title": "Escape",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 1000,
+        "quarter": 1000
+      }
+    },
+    {
+      "title": "Legend",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 100,
+        "quarter": 100
+      }
+    },
+    {
+      "title": "Lvl Insane",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 1000,
+        "quarter": 1000
+      }
+    },
+    {
+      "title": "Turn Me On",
+      "modes": {
+        "twoSabers": 11111,
+        "oneSaber": 1000,
+        "noArrows": 1111,
+        "full": 1,
+        "quarter": 1
+      }
+    }
+  ]
+}
