@@ -1,27 +1,39 @@
-# RandomSaber
+# Random Saber
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+[![GitHub](https://img.shields.io/github/license/pawcoding/randomsaber?color=brightgreen)](https://github.com/pawcoding/randomsaber/blob/main/LICENSE)
+[![Live Demo](https://img.shields.io/badge/live--demo-online-blue)](https://randomsaber.apps.pawcode.de)
+![Version](https://img.shields.io/badge/version-3.0.0-brightgreen)
+[![Discord](https://badgen.net/discord/members/GzgTh4hxrx)](https://discord.gg/GzgTh4hxrx)
 
-## Development server
+Are you a proud owner of vr-glasses including [BeatSaber](https://beatsaber.com/)?
+Have you bought way too many music packs (or custom songs) to decide which song you want to play?  
+This webapp is just the right thing to solve your luxury problem!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Screenshot](/assets/screenshot.jpg)
 
-## Code scaffolding
+If you have further ideas for the tool or would like to contribute yourself, please visit my [Discord](https://discord.gg/GzgTh4hxrx) server.
+All suggestions are discussed there, tasks are distributed and help is offered.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Roadmap
+| Status | Version | Features                      |
+|--------|---------|-------------------------------|
+| 🟩     | `1.0.0` | Proof of Concept              |
+| 🟩     | `2.0.0` | Packs fetched from Repository |
+| 🟩     | `3.0.0` | Progressive Web App           |
+| 🟩     | `3.0.1` | Redesign                      |
+| 🟩     | `3.0.2` | Favicon                       |
+| 🟥     | `3.1.0` | Custom Songs                  |
+| 🟥     | `3.2.0` | Text-To-Speech                |
 
-## Build
+## Version 3.0.0
+- [x] PWA Support
+- [ ] Favicon, etc.
+- [x] Footer
+- [x] Local Fonts
+- [ ] Redesign
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## License
+[MIT](https://github.com/pawcoding/randomsaber/blob/main/LICENSE)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Author
+Luis Wolf &lt;development@pawcode.de&gt;

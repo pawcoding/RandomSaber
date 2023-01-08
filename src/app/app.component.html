@@ -1,6 +1,6 @@
 <main
   class="flex flex-col items-center
-    h-screen overflow-scroll p-4 space-y-4 sm:space-y-8
+    h-screen overflow-scroll p-8 space-y-4 sm:space-y-8
     scrollbar-thin scrollbar-thumb-primary-500 dark:scrollbar-thumb-gray-600 scrollbar-track-primary-200 dark:scrollbar-track-transparent"
 >
   <section>
@@ -70,4 +70,33 @@
   </section>
 
   <app-song-selector></app-song-selector>
+
+  <footer
+    class="flex gap-4 flex-col sm:flex-row items-center justify-around text-center w-full max-w-screen-2xl mx-auto mt-10"
+  >
+    <a
+      href="https://github.com/pawcoding/randomsaber"
+      rel="noreferrer noopener"
+      target="_blank"
+      title="View source code on GitHub"
+    >
+      View on GitHub
+    </a>
+
+    <span class="cursor-default">
+      Version {{version}}
+    </span>
+
+    <a
+      href="https://pawcode.de/"
+      target="_blank"
+      title="Created by pawcode Development"
+    >
+      <img
+        height="32" width="139"
+        alt="pawcode&nbsp;Development"
+        src="/assets/pawcode.svg"
+      >
+    </a>
+  </footer>
 </main>

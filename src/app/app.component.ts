@@ -5,6 +5,7 @@ import {KeyValue} from "@angular/common";
 import {PackLoaderService} from "./services/pack-loader.service";
 import {Song} from "./interfaces/Song";
 import {iswitch} from "iswitch";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,8 @@ export class AppComponent {
   readonly Difficulty = Difficulty
 
   title = 'random-saber'
+
+  version = environment.version
 
   difficulty = Difficulty.EXPERT
 
