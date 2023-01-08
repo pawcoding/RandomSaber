@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
+  "$id": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/packs/.pack.schema.json",
   "type": "object",
   "default": {},
   "title": "Music Pack Schema",

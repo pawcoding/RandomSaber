@@ -8,7 +8,7 @@ import {catchError, of} from "rxjs";
 })
 export class PackLoaderService {
 
-  private dataUrl = 'https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs'
+  private dataUrl = 'https://raw.githubusercontent.com/pawcoding/RandomSaber/main/packs'
 
   private register = ''
 

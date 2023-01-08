@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/angular_setup/packs/.pack.schema.json",
+  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/packs/.pack.schema.json",
   "id": "ost5",
   "title": "Original Soundtrack Vol. 5",
   "type": "OST",

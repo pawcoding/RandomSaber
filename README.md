@@ -14,23 +14,53 @@ This webapp is just the right thing to solve your luxury problem!
 If you have further ideas for the tool or would like to contribute yourself, please visit my [Discord](https://discord.gg/GzgTh4hxrx) server.
 All suggestions are discussed there, tasks are distributed and help is offered.
 
+## Music Packs
+
+The data for the music packs is stored and retrieved directly here on GitHub in the `/packs`-directory.
+The `.register`-file contains the IDs for all currently available music packs.
+Each of these packs has its own file with a special schema, which is provided in the `.pack.schema.json`-file.
+
+Here is an example taken from `ost1.json`:
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/pawcoding/RandomSaber/main/packs/.pack.schema.json",
+  "id": "ost1",             // ID identical to the file name
+  "title": "Original Soundtrack Vol. 1", // Human readable title for the pack
+  "type": "OST",            // Type of music pack [OST, ADDON, CUSTOM]
+  "img": "https://beatsaber.com/images/music/music1.jpg", // URL for cover art
+  "songs": [
+    {
+      "title": "$100 Bills",// Song title
+      "modes": {
+        "twoSabers": 11111, // Playable in all difficulties with two sabers
+        "oneSaber": 1000,   // Only available on 'Expert' with one saber
+        "noArrows": 1111,   // Available in every difficulty but 'Expert+' with no arrows
+        "full": 10,         // Only available on 'Normal' in 360° mode 
+        "quarter": 10       // Only available on 'Normal' in 90° mode
+      }
+    }, ...
+  ]
+}
+```
+
 ## Roadmap
 | Status | Version | Features                      |
 |--------|---------|-------------------------------|
 | 🟩     | `1.0.0` | Proof of Concept              |
 | 🟩     | `2.0.0` | Packs fetched from Repository |
 | 🟩     | `3.0.0` | Progressive Web App           |
-| 🟩     | `3.0.1` | Redesign                      |
-| 🟩     | `3.0.2` | Favicon                       |
+| 🟥     | `3.0.1` | Redesign                      |
+| 🟥     | `3.0.2` | Favicon                       |
 | 🟥     | `3.1.0` | Custom Songs                  |
 | 🟥     | `3.2.0` | Text-To-Speech                |
 
 ## Version 3.0.0
 - [x] PWA Support
-- [ ] Favicon, etc.
 - [x] Footer
 - [x] Local Fonts
 - [ ] Redesign
+- [ ] Favicon, etc.
 
 ## License
 [MIT](https://github.com/pawcoding/randomsaber/blob/main/LICENSE)
