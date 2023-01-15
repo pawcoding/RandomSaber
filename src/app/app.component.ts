@@ -27,7 +27,7 @@ export class AppComponent {
 
   originalOrder = (a: KeyValue<any, string>, b: KeyValue<any, string>) => 0
 
-  songs: { pack: string, title: string }[] = []
+  songs: { pack: string, img: string, title: string }[] = []
 
   refreshCooldown?: NodeJS.Timeout
 
@@ -58,7 +58,7 @@ export class AppComponent {
       .map(pack => (
         pack.songs
           .filter(song => this.isPlayable(song, difficultyNumber))
-          .map(song => ({ pack: pack.title, title: song.title }))
+          .map(song => ({ pack: pack.title, img: pack.img, title: song.title }))
         )
       )
       .filter(arr => arr.length > 0)

@@ -22,11 +22,14 @@
       </span>
 
       <section class="flex">
-        <img
-          class="h-20 w-20 rounded shadow object-cover"
-          [src]="pack.img"
-          [alt]="pack.title"
+        <span
+          class="block h-20 w-20 cover-shadow"
         >
+          <img [src]="pack.img"
+               [alt]="pack.title"
+               class="absolute block rounded-xl z-10 object-cover"
+          >
+        </span>
 
         <div class="flex h-20 grow flex-col justify-between px-4 text-sm">
           <h3 class="m-0 text-primary-500 dark:text-primary-300">

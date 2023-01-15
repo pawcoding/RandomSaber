@@ -7,9 +7,9 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ToPlayComponent implements OnInit {
 
   @Input()
-  songs?: { pack: string, title: string }[]
+  songs?: { pack: string, img: string, title: string }[]
 
-  song: { pack?: string, title: string }
+  song: { pack?: string, img?: string, title: string }
 
   tries = 0
 
