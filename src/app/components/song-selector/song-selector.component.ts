@@ -1,78 +1,77 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {
+  AfterViewInit, Component, computed,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output, signal,
+  ViewChild
+} from '@angular/core';
 import {Pack} from "../../interfaces/Pack";
 import {Song} from "../../interfaces/Song";
-import {SongSelectorService} from "../../services/song-selector.service";
 
 @Component({
   selector: 'app-song-selector',
   templateUrl: './song-selector.component.html'
 })
-export class SongSelectorComponent implements OnInit, AfterViewInit {
+export class SongSelectorComponent implements OnChanges, AfterViewInit {
+  @Input('pack')
+  public packInput: Pack
 
-  pack: Pack | null
-
-  active: number = 0
-
-  allActive = false
+  // @ts-ignore
+  protected readonly pack = signal(this.packInput, {deep: true})
+  protected readonly active = computed(() => this.pack().songs.filter(song => song.active).length)
+  protected readonly allActive = computed(() => this.active() === this.pack().songs.length)
 
   @ViewChild('scrollContainer')
-  public scrollContainer?: ElementRef
-
+  private readonly scrollContainer: ElementRef
   @ViewChild('scrollContent')
-  public scrollContent?: ElementRef
+  private readonly scrollContent: ElementRef
 
+  @Output()
+  private readonly onSelect = new EventEmitter<Song>()
+  @Output()
+  private readonly onSelectAll = new EventEmitter<Song[]>()
+  @Output()
+  private readonly onCloseSongSelection = new EventEmitter<Pack>()
 
-  constructor(
-    private songSelectorService: SongSelectorService
-  ) {
-    this.pack = null
-
-    this.songSelectorService.packToOpen.subscribe(pack => this.setPack(pack))
-  }
-
-
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.pack.set(this.packInput)
   }
 
   ngAfterViewInit(): void {
-    const outerHeight = this.scrollContainer?.nativeElement.clientHeight
-    const innerHeight = this.scrollContent?.nativeElement.clientHeight
+    const outerHeight = this.scrollContainer.nativeElement.clientHeight
+    const innerHeight = this.scrollContent.nativeElement.clientHeight
 
     if (innerHeight > outerHeight)
       this.scrollContainer?.nativeElement.classList.add('pr-4')
   }
 
-
-  private setPack(pack: Pack | null): void {
-    this.pack = pack
-    this.toggleActive()
-
-    if (this.pack)
-      setTimeout(() => this.ngAfterViewInit(), 10)
-  }
-
-  toggleActive(song?: Song, $event?: MouseEvent): void {
-    $event?.stopPropagation()
-
-    if (song)
-      song.active = !song.active
-
-    this.active = this.pack?.songs.filter(song => song.active).length || 0
-    this.allActive = this.active === this.pack?.songs.length
-    this.songSelectorService.triggerChangeEvent()
+  toggleActive(song: Song): void {
+    this.pack.mutate(pack => {
+      const songToChange = pack.songs.find(s => s.number === song.number)
+      if (songToChange)
+        songToChange.active = !songToChange.active
+    })
   }
 
   toggleAllActive(): void {
-    if (this.active === this.pack?.songs.length)
-      this.pack.songs.forEach(song => song.active = false)
-    else
-      this.pack?.songs.forEach(song => song.active = true)
-
-    this.toggleActive()
+    const futureActiveState = !this.allActive()
+    this.pack.mutate(pack => {
+      pack.songs.forEach(song => song.active = futureActiveState)
+    })
   }
 
-  closeSongSelector(): void {
-    this.songSelectorService.closePack()
+  protected select(song: Song): void {
+    this.onSelect.emit(song)
+  }
+
+  protected selectAll(): void {
+    this.onSelectAll.emit(this.pack().songs)
+  }
+
+  protected closeSongSelector() {
+    this.onCloseSongSelection.emit(this.pack())
   }
 
 }

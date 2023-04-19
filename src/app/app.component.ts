@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, computed, effect, inject, Signal, signal} from '@angular/core';
 import {Difficulty} from "./enums/Difficulty";
 import {Mode} from "./enums/Mode";
 import {KeyValue} from "@angular/common";
@@ -6,47 +6,72 @@ import {PackLoaderService} from "./services/pack-loader.service";
 import {Song} from "./interfaces/Song";
 import {iswitch} from "iswitch";
 import {environment} from "../environments/environment";
+import {MatomoTracker} from "@ngx-matomo/tracker";
+import {Pack} from "./interfaces/Pack";
+import {SongSelectorService} from "./services/song-selector.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  private readonly packLoader = inject(PackLoaderService)
+  private readonly songSelector = inject(SongSelectorService)
+  private readonly tracker = inject(MatomoTracker)
 
-  readonly Mode = Mode
+  protected readonly Mode = Mode
 
-  readonly Difficulty = Difficulty
+  protected readonly Difficulty = Difficulty
 
   title = 'random-saber'
 
   version = environment.version
 
-  difficulty = Difficulty.EXPERT
+  difficulty = signal(Difficulty.EXPERT)
 
-  mode = Mode.TWO_SABERS
+  mode = signal(Mode.TWO_SABERS)
 
   originalOrder = (a: KeyValue<any, string>, b: KeyValue<any, string>) => 0
 
   songs: { pack: string, img: string, title: string }[] = []
 
-  refreshCooldown?: NodeJS.Timeout
+  refreshCooldown?: number
+
+  packToChange?: Pack
+
+  packs = this.packLoader.getPacks()
+
+  packsLoaded = computed(() => this.packs().length > 0)
 
 
-  constructor(
-    private packLoaderService: PackLoaderService
-  ) {
-    packLoaderService.changeEmitter.subscribe(_ => {
-      clearTimeout(this.refreshCooldown)
-      this.refreshCooldown = setTimeout(() => {
-        this.refreshPlayableSongs()
-      }, 500)
+  constructor() {
+    effect(() => {
+      this.refreshPlayableSongs(this.packs(), this.difficulty(), this.mode())
+    })
+
+    // this.packLoader.changeEmitter.subscribe(_ => {
+    //   clearTimeout(this.refreshCooldown)
+    //   this.refreshCooldown = window.setTimeout(() => {
+    //     this.refreshPlayableSongs()
+    //   }, 500)
+    // })
+
+    this.tracker.setConsentGiven();
+
+    this.songSelector.packToOpen.subscribe(pack => {
+      this.packToChange = pack ?? undefined
     })
   }
 
-  refreshPlayableSongs(): void {
+  onSongSelectionClose(pack: Pack) {
+    this.packToChange = undefined
+    this.songSelector.closePack()
+  }
+
+  refreshPlayableSongs(packs: Pack[], difficulty: Difficulty, mode: Mode): void {
     console.time('🎛️')
 
-    const difficultyNumber = iswitch(this.difficulty,
+    const difficultyNumber = iswitch(difficulty,
       [Difficulty.EASY, () => 1],
       [Difficulty.NORMAL, () => 10],
       [Difficulty.HARD, () => 100],
@@ -54,10 +79,10 @@ export class AppComponent {
       [Difficulty.PRO, () => 10000]
     ) || 1
 
-    this.songs = this.packLoaderService.packs
+    this.songs = packs
       .map(pack => (
         pack.songs
-          .filter(song => this.isPlayable(song, difficultyNumber))
+          .filter(song => this.isPlayable(song, difficultyNumber, mode))
           .map(song => ({ pack: pack.title, img: pack.img, title: song.title }))
         )
       )
@@ -67,11 +92,11 @@ export class AppComponent {
     console.timeEnd('🎛️')
   }
 
-  private isPlayable(song: Song, difficultyNumber: number): boolean {
+  private isPlayable(song: Song, difficultyNumber: number, mode: Mode): boolean {
     if (!song.active)
       return false
 
-    const modeNumber = iswitch(this.mode,
+    const modeNumber = iswitch(mode,
       [Mode.TWO_SABERS, () => song.modes.twoSabers],
       [Mode.ONE_SABER, () => song.modes.oneSaber],
       [Mode.NO_ARROWS, () => song.modes.noArrows],
@@ -83,13 +108,11 @@ export class AppComponent {
   }
 
   changeDifficulty(difficulty: Difficulty) {
-    this.difficulty = difficulty
-    this.refreshPlayableSongs()
+    this.difficulty.set(difficulty)
   }
 
   changeMode(mode: Mode) {
-    this.mode = mode
-    this.refreshPlayableSongs()
+    this.mode.set(mode)
   }
 
 }

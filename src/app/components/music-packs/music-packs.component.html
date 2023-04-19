@@ -5,10 +5,12 @@
 
   <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
     <div
-      *ngFor="let pack of osts"
+      *ngFor="let pack of osts()"
     >
       <app-pack
         [pack]="pack"
+        (onOpenSongSelection)="openSongSelection($event)"
+        (onSelectAll)="selectAll($event)"
       ></app-pack>
     </div>
   </section>
@@ -17,10 +19,12 @@
 
   <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
     <div
-      *ngFor="let pack of addons"
+      *ngFor="let pack of addons()"
     >
       <app-pack
         [pack]="pack"
+        (onOpenSongSelection)="openSongSelection($event)"
+        (onSelectAll)="selectAll($event)"
       ></app-pack>
     </div>
   </section>

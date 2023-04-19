@@ -1,42 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, computed, EventEmitter, Input, OnChanges, Output, signal} from '@angular/core';
 import {Pack} from "../../interfaces/Pack";
-import {PackLoaderService} from "../../services/pack-loader.service";
+import {Song} from "../../interfaces/Song";
 
 @Component({
   selector: 'app-music-packs',
   templateUrl: './music-packs.component.html'
 })
-export class MusicPacksComponent implements OnInit {
+export class MusicPacksComponent implements OnChanges {
+  @Input('packs')
+  public packsInput: Pack[]
 
-  // { id: 'rock', title: 'Rock Mixtape', img: 'https://beatsaber.com/images/music/music21.jpg', type: 'ADDON' },
-  // { id: 'weeknd', title: 'The Weeknd', img: 'https://beatsaber.com/images/music/music20.jpg', type: 'ADDON' },
-  // { id: 'lizzo', title: 'Lizzo', img: 'https://beatsaber.com/images/music/music19.jpg', type: 'ADDON' },
-  // { id: 'electronic', title: 'Electronic Mixtape', img: 'https://beatsaber.com/images/music/music18.jpg', type: 'ADDON' },
-  // { id: 'fall', title: 'Fall Out Boy', img: 'https://beatsaber.com/images/music/music17.jpg', type: 'ADDON' },
-  // { id: 'gaga', title: 'Lady Gaga', img: 'https://beatsaber.com/images/music/music15.jpg', type: 'ADDON' },
-  // { id: 'eilish', title: 'Billie Eilish', img: 'https://beatsaber.com/images/music/music14.jpg', type: 'ADDON' },
-  // { id: 'skrillex', title: 'Skrillex', img: 'https://beatsaber.com/images/music/music13.jpg', type: 'ADDON' },
-  // { id: 'interscope', title: 'Interscope Mixtape', img: 'https://beatsaber.com/images/music/music12.jpg', type: 'ADDON' },
-  // { id: 'bts', title: 'BTS', img: 'https://beatsaber.com/images/music/music10.jpg', type: 'ADDON' },
+  // @ts-ignore
+  protected readonly packs = signal(this.packsInput, {deep: true})
+  protected readonly osts = computed(() => this.packs().filter(pack => pack.type === 'OST'))
+  protected readonly addons = computed(() => this.packs().filter(pack => pack.type === 'ADDON'))
 
-  packs: Pack[]
+  @Output()
+  private readonly onSelectAll = new EventEmitter<Song[]>()
+  @Output()
+  private readonly onOpenSongSelection = new EventEmitter<Pack>()
 
-  osts: Pack[] = []
-
-  addons: Pack[] = []
-
-  constructor(
-    private packLoaderService: PackLoaderService
-  ) {
-    this.packs = packLoaderService.packs
-
-    packLoaderService.changeEmitter.subscribe(_ => {
-      this.osts = this.packs.filter(pack => pack.type === 'OST')
-      this.addons = this.packs.filter(pack => pack.type === 'ADDON')
-    })
+  ngOnChanges(): void {
+    this.packs.set(this.packsInput)
   }
 
-  ngOnInit(): void {
+  toggleAllActive(songs: Song[]): void {
+    console.log('toggleAllActive', songs)
+    const active = songs.filter(song => song.active).length
+
+    if (active === songs.length)
+      songs.forEach(song => song.active = false)
+    else
+      songs.forEach(song => song.active = true)
+
+    // this.songSelector.changeEvent.emit()
+  }
+
+  protected openSongSelection(pack: Pack): void {
+    this.onOpenSongSelection.emit(pack)
+  }
+
+  protected selectAll(songs: Song[]): void {
+    this.onSelectAll.emit(songs)
   }
 
 }

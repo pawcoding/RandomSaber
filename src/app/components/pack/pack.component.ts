@@ -1,48 +1,33 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, computed, EventEmitter, Input, OnChanges, OnInit, Output, signal} from '@angular/core';
 import {Pack} from "../../interfaces/Pack";
-import {SongSelectorService} from "../../services/song-selector.service";
-import {PackLoaderService} from "../../services/pack-loader.service";
+import {Song} from "../../interfaces/Song";
 
 @Component({
   selector: 'app-pack',
   templateUrl: './pack.component.html'
 })
-export class PackComponent implements OnInit {
-
+export class PackComponent implements OnChanges {
   @Input()
-  pack?: Pack
+  public pack: Pack
 
-  active = 0
+  protected readonly active = signal(0)
+  protected readonly allActive = computed(() => this.active() === this.pack.songs.length)
 
-  constructor(
-    private songSelectorService: SongSelectorService,
-    private packLoaderService: PackLoaderService
-  ) {
-    songSelectorService.changeEvent.subscribe(_ => this.refreshActive())
+  @Output()
+  private readonly onSelectAll = new EventEmitter<Song[]>()
+  @Output()
+  private readonly onOpenSongSelection = new EventEmitter<Pack>()
+
+  ngOnChanges(): void {
+    this.active.set(this.pack.songs.filter(song => song.active).length)
   }
 
-  ngOnInit(): void {
-    this.refreshActive()
+  protected openSongSelection(): void {
+    this.onOpenSongSelection.emit(this.pack)
   }
 
-  refreshActive() {
-    this.active = this.pack?.songs.filter(song => song.active).length || 0
-    this.packLoaderService.changeEmitter.emit(this.pack)
-  }
-
-  toggleAllActive($event: MouseEvent | undefined): void {
-    $event?.preventDefault() || $event?.stopPropagation()
-
-    if (this.active === this.pack?.songs.length)
-      this.pack?.songs.forEach(song => song.active = false)
-    else
-      this.pack?.songs.forEach(song => song.active = true)
-
-    this.songSelectorService.changeEvent.emit()
-  }
-
-  openSongSelection(pack: Pack) {
-    this.songSelectorService.openPack(pack)
+  protected selectAll(): void {
+    this.onSelectAll.emit(this.pack.songs)
   }
 
 }

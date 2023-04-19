@@ -1,5 +1,4 @@
 <div
-  *ngIf="pack"
   class="h-full"
   [title]="'Select songs from &quot;' + pack.title + '&quot;'"
 >
@@ -14,8 +13,9 @@
   <label
     class="grid h-full cursor-pointer items-center rounded-lg bg-gray-100 dark:bg-gray-900 shadow hover:shadow-lg transition-colors group hover:bg-gray-50 dark:hover:bg-black grid-rows-[auto_1fr] sm:grid-cols-[6rem_1fr]"
     [for]="pack.id"
-    (click)="openSongSelection(pack)"
-    (contextmenu)="toggleAllActive($event)"
+    (click)="openSongSelection()"
+    (contextmenu)="selectAll()"
+    prevent-default
   >
     <span
       class="block h-24 w-full rounded-t-lg bg-cover bg-center brightness-100 saturate-100 transition-all max-w-24 group-hover:saturate-125 group-hover:brightness-125 sm:w-24 sm:max-w-none sm:rounded-l-lg sm:rounded-tr-none"
@@ -29,11 +29,12 @@
 
       <p
         class="mt-2 ml-auto text-accent-600 dark:text-accent-300 sm:mt-0"
-        [title]="(active !== pack.songs.length ? 'Add' : 'Remove') + ' all ' + pack.songs.length + ' songs from &quot;' + pack.title + '&quot;'"
-        (click)="toggleAllActive($event)"
+        [title]="(allActive() ? 'Remove' : 'Add') + ' all ' + pack.songs.length + ' songs from &quot;' + pack.title + '&quot;'"
+        (click)="selectAll()"
+        stop-propagation
       >
         <span class="font-bold text-accent-700 dark:text-accent-300">
-          {{active}}/{{pack.songs.length}}
+          {{active()}}/{{pack.songs.length}}
         </span> Songs
       </p>
     </div>

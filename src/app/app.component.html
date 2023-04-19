@@ -33,7 +33,7 @@
           class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-colors transition-shadow text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
           title="Select a mode to play"
           (ngModelChange)="changeMode($event)"
-          [(ngModel)]="mode"
+          [ngModel]="mode()"
         >
           <option
             *ngFor="let modeItem of Mode | keyvalue: originalOrder"
@@ -48,7 +48,7 @@
           class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-colors transition-shadow text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
           title="Select your difficulty level"
           (ngModelChange)="changeDifficulty($event)"
-          [(ngModel)]="difficulty"
+          [ngModel]="difficulty()"
         >
           <option
             *ngFor="let difficultyItem of Difficulty | keyvalue: originalOrder"
@@ -65,11 +65,15 @@
     </span>
 
     <div class="mx-auto max-w-screen-2xl">
-      <app-music-packs></app-music-packs>
+      <ng-container *ngIf="packsLoaded()">
+        <app-music-packs [packs]="packs()"></app-music-packs>
+      </ng-container>
     </div>
   </section>
 
-  <app-song-selector></app-song-selector>
+  <ng-container *ngIf="packToChange">
+    <app-song-selector [pack]="packToChange" (onCloseSongSelection)="onSongSelectionClose($event)"></app-song-selector>
+  </ng-container>
 
   <footer
     class="flex gap-4 flex-col sm:flex-row items-center justify-around text-center w-full max-w-screen-2xl mx-auto mt-10"
