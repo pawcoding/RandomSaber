@@ -1,12 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SongToPlay} from "../../interfaces/SongToPlay";
+import { Component, Input, OnInit } from '@angular/core'
+import { SongToPlay } from '../../interfaces/SongToPlay'
 
 @Component({
   selector: 'app-to-play',
-  templateUrl: './to-play.component.html'
+  templateUrl: './to-play.component.html',
 })
 export class ToPlayComponent implements OnInit {
-
   @Input()
   songs: SongToPlay[]
 
@@ -20,13 +19,12 @@ export class ToPlayComponent implements OnInit {
     }
   }
 
-
   selectRandomSong($event?: Event): void {
     $event?.preventDefault()
 
     if (!this.songs) {
       this.song = {
-        title: 'Waiting for music packs'
+        title: 'Waiting for music packs',
       }
 
       if (this.tries++ < 3) {
@@ -40,7 +38,7 @@ export class ToPlayComponent implements OnInit {
 
     if (this.songs.length === 0) {
       this.song = {
-        title: 'No song with current settings available'
+        title: 'No song with current settings available',
       }
       return
     }
@@ -48,5 +46,4 @@ export class ToPlayComponent implements OnInit {
     this.song = this.songs[Math.floor(Math.random() * this.songs.length)]
     this.tries = 0
   }
-
 }

@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { SongSelectorComponent } from './song-selector.component';
+import { SongSelectorComponent } from './song-selector.component'
 
 describe('SongSelectorComponent', () => {
-  let component: SongSelectorComponent;
-  let fixture: ComponentFixture<SongSelectorComponent>;
+  let component: SongSelectorComponent
+  let fixture: ComponentFixture<SongSelectorComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SongSelectorComponent ]
-    })
-    .compileComponents();
+      declarations: [SongSelectorComponent],
+    }).compileComponents()
 
-    fixture = TestBed.createComponent(SongSelectorComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(SongSelectorComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

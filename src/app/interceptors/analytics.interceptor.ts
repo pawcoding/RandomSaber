@@ -1,8 +1,8 @@
-import {inject, Injectable} from "@angular/core";
-import {MatomoRouterInterceptor} from "@ngx-matomo/router";
-import {MatomoTracker} from "@ngx-matomo/tracker";
-import {NavigationEnd} from "@angular/router";
-import {Observable} from "rxjs";
+import { inject, Injectable } from '@angular/core'
+import { MatomoRouterInterceptor } from '@ngx-matomo/router'
+import { MatomoTracker } from '@ngx-matomo/tracker'
+import { NavigationEnd } from '@angular/router'
+import { Observable } from 'rxjs'
 
 @Injectable()
 export class AnalyticsInterceptor implements MatomoRouterInterceptor {

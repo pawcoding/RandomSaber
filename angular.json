@@ -23,13 +23,9 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "scripts": [],
-            "allowedCommonJsDependencies": [
-              "iswitch"
-            ],
+            "allowedCommonJsDependencies": ["iswitch"],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
@@ -96,16 +92,21 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

@@ -1,5 +1,4 @@
 export interface Song {
-
   number: number
   title: string
   active: boolean
@@ -10,5 +9,4 @@ export interface Song {
     full: number
     quarter: number
   }
-
 }

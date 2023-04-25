@@ -4,28 +4,22 @@
   <h3 class="mx-auto mt-0 max-w-screen-md">Original Sound Tracks</h3>
 
   <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
-    <div
-      *ngFor="let pack of osts()"
-    >
+    <div *ngFor="let pack of osts()">
       <app-pack
         [pack]="pack"
         (onOpenSongSelection)="openSongSelection($event)"
-        (onSelectAll)="selectAll($event)"
-      ></app-pack>
+        (onSelectAll)="selectAll($event)"></app-pack>
     </div>
   </section>
 
   <h3 class="mx-auto max-w-screen-md">Official Addons</h3>
 
   <section class="grid gap-2 grid-cols-sm sm:grid-cols lg:gap-4">
-    <div
-      *ngFor="let pack of addons()"
-    >
+    <div *ngFor="let pack of addons()">
       <app-pack
         [pack]="pack"
         (onOpenSongSelection)="openSongSelection($event)"
-        (onSelectAll)="selectAll($event)"
-      ></app-pack>
+        (onSelectAll)="selectAll($event)"></app-pack>
     </div>
   </section>
 

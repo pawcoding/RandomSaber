@@ -1,13 +1,13 @@
-import {computed, Injectable, Signal, signal} from '@angular/core';
-import {Pack} from "../interfaces/Pack";
-import {SongToPlay} from "../interfaces/SongToPlay";
-import {PackLoaderUtil} from "../utils/pack-loader.util";
-import {Mode} from "../enums/Mode";
-import {Difficulty} from "../enums/Difficulty";
-import {SongSelectorUtil} from "../utils/song-selector.util";
+import { computed, Injectable, Signal, signal } from '@angular/core'
+import { Pack } from '../interfaces/Pack'
+import { SongToPlay } from '../interfaces/SongToPlay'
+import { PackLoaderUtil } from '../utils/pack-loader.util'
+import { Mode } from '../enums/Mode'
+import { Difficulty } from '../enums/Difficulty'
+import { SongSelectorUtil } from '../utils/song-selector.util'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 /**
  * The song service is responsible for storing packs and song selection for the application
@@ -28,15 +28,18 @@ export class SongService {
       return []
     }
 
-    return SongSelectorUtil.getPlayableSongs(this.packsAsArray(), this._mode(), this._difficulty())
+    return SongSelectorUtil.getPlayableSongs(
+      this.packsAsArray(),
+      this._mode(),
+      this._difficulty()
+    )
   })
 
   /**
    * Initializes the song service by loading all packs
    */
   constructor() {
-    this._packLoaderUtil.loadPacks()
-      .then(this._packs.set)
+    this._packLoaderUtil.loadPacks().then(this._packs.set)
   }
 
   /**
@@ -44,7 +47,7 @@ export class SongService {
    * @param pack the pack to mutate
    */
   public mutatePack(pack: Pack) {
-    this._packs.mutate(packs => packs[pack.id] = pack)
+    this._packs.mutate((packs) => (packs[pack.id] = pack))
     this._packLoaderUtil.safePackToLocalStorage(pack)
   }
 

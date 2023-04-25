@@ -1,6 +1,6 @@
 {
   "name": "random-saber",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": {
     "name": "pawcode Development"
   },
@@ -16,12 +16,23 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "prepwa": "npm run build",
+    "pwa": "npx http-server -p 4242 -c-1 dist/random-saber",
     "build": "ng build",
-    "server": "npm run build && npx http-server -p 4242 -c-1 dist/random-saber",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "lint": "ng lint",
+    "lint:watch": "nodemon --exec \"npm run lint || exit 1\" --ext ts,html,css",
+    "prettier": "npx prettier --write src/",
+    "prettier:check": "npx prettier --check src/",
+    "test": "ng test",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless,FirefoxHeadless --code-coverage --progress=false",
+    "prepare": "husky install",
+    "pre-commit": "npx lint-staged"
   },
   "private": true,
+  "lint-staged": {
+    "**/*": "npx prettier --write src/ --ignore-unknown"
+  },
   "dependencies": {
     "@angular/animations": "^16.0.0-rc.2",
     "@angular/common": "^16.0.0-rc.2",
@@ -41,19 +52,33 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.0-rc.1",
+    "@angular-eslint/builder": "15.2.1",
+    "@angular-eslint/eslint-plugin": "15.2.1",
+    "@angular-eslint/eslint-plugin-template": "15.2.1",
+    "@angular-eslint/schematics": "15.2.1",
+    "@angular-eslint/template-parser": "15.2.1",
     "@angular/cli": "~16.0.0-rc.1",
     "@angular/compiler-cli": "^16.0.0-rc.2",
     "@tailwindcss/forms": "^0.5.3",
     "@types/jasmine": "~4.0.0",
     "@types/node": "^18.16.0",
+    "@typescript-eslint/eslint-plugin": "5.48.2",
+    "@typescript-eslint/parser": "5.48.2",
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lint-staged": "^13.2.1",
     "postcss": "^8.4.20",
+    "prettier": "^2.8.8",
+    "prettier-eslint": "^15.0.1",
     "tailwind-scrollbar": "^3.0.0",
     "tailwindcss": "^3.3.1",
     "typescript": "~5.0.4"

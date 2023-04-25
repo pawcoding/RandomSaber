@@ -1,14 +1,14 @@
-import {Component, computed, inject} from '@angular/core';
-import {Difficulty} from "./enums/Difficulty";
-import {Mode} from "./enums/Mode";
-import {environment} from "../environments/environment";
-import {MatomoTracker} from "@ngx-matomo/tracker";
-import {Pack} from "./interfaces/Pack";
-import {SongService} from "./services/song.service";
+import { Component, computed, inject } from '@angular/core'
+import { Difficulty } from './enums/Difficulty'
+import { Mode } from './enums/Mode'
+import { environment } from '../environments/environment'
+import { MatomoTracker } from '@ngx-matomo/tracker'
+import { Pack } from './interfaces/Pack'
+import { SongService } from './services/song.service'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   title = 'random-saber'
@@ -17,7 +17,7 @@ export class AppComponent {
   // declare enums for template
   protected readonly Difficulty = Difficulty
   protected readonly Mode = Mode
-  protected readonly keepOrder = () => 0;
+  protected readonly keepOrder = () => 0
 
   // inject services
   private readonly _songService = inject(SongService)
@@ -33,7 +33,7 @@ export class AppComponent {
   protected packToChange?: Pack
 
   constructor() {
-    this.tracker.setConsentGiven();
+    this.tracker.setConsentGiven()
   }
 
   /**
@@ -51,8 +51,7 @@ export class AppComponent {
    */
   closeSongSelection(pack: Pack | undefined) {
     this.packToChange = undefined
-    if (!!pack)
-      this.mutatePack(pack)
+    if (!!pack) this.mutatePack(pack)
   }
 
   /**
