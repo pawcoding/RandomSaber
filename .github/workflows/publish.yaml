@@ -18,19 +18,22 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-        # Setup Node v16
+      # Setup Node v16
       - name: 💻 Use node 16
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'npm'
 
+      # Install dependencies and build project
       - name: 🔨 Build project
         run: |
           npm cache clean --force
           npm ci
-          npm install -g @angular/cli@14.x > /dev/null
+          npm install -g @angular/cli@16.x > /dev/null
           npm run build
+
+      # Upload to hosting
       - name: 📤 Upload to server
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -38,10 +41,11 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           port: ${{ secrets.FTP_PORT }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: './dist/random-saber/*'
+          local_path: './dist/random-saber/'
           remote_path: './'
           sftp_only: true
 
+      # Purge unused old Angular files via custom script
       - name: 🗑️ Purge unused files
         uses: fjogeleit/http-request-action@v1
         with:
