@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {SongToPlay} from "../../interfaces/SongToPlay";
 
 @Component({
   selector: 'app-to-play',
@@ -7,19 +8,16 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ToPlayComponent implements OnInit {
 
   @Input()
-  songs?: { pack: string, img: string, title: string }[]
+  songs: SongToPlay[]
 
-  song: { pack?: string, img?: string, title: string }
+  song: SongToPlay
 
   tries = 0
 
-  constructor() {
+  ngOnInit(): void {
     this.song = {
       title: 'Start random generator',
     }
-  }
-
-  ngOnInit(): void {
   }
 
 

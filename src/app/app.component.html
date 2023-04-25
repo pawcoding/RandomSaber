@@ -9,7 +9,7 @@
 
   <section class="w-full">
     <div class="mx-auto max-w-screen-md">
-      <app-to-play [songs]="songs"></app-to-play>
+      <app-to-play [songs]="songsToPlay()"></app-to-play>
     </div>
 
     <span class="mx-auto my-8 block max-w-screen-sm">
@@ -22,7 +22,7 @@
 
         <p class="ml-auto text-primary-700">
           <span class="font-semibold">
-            {{songs.length}}
+            {{songsToPlay().length}}
           </span> Songs
         </p>
       </div>
@@ -36,7 +36,7 @@
           [ngModel]="mode()"
         >
           <option
-            *ngFor="let modeItem of Mode | keyvalue: originalOrder"
+            *ngFor="let modeItem of Mode | keyvalue: keepOrder"
             [ngValue]="modeItem.value"
           >
             {{modeItem.value}}
@@ -51,7 +51,7 @@
           [ngModel]="difficulty()"
         >
           <option
-            *ngFor="let difficultyItem of Difficulty | keyvalue: originalOrder"
+            *ngFor="let difficultyItem of Difficulty | keyvalue: keepOrder"
             [ngValue]="difficultyItem.value"
           >
             {{difficultyItem.value}}
@@ -66,13 +66,13 @@
 
     <div class="mx-auto max-w-screen-2xl">
       <ng-container *ngIf="packsLoaded()">
-        <app-music-packs [packs]="packs()"></app-music-packs>
+        <app-music-packs [packs]="packs()" (onOpenSongSelection)="openSongSelection($event)" (onSelectAll)="mutatePack($event)"></app-music-packs>
       </ng-container>
     </div>
   </section>
 
   <ng-container *ngIf="packToChange">
-    <app-song-selector [pack]="packToChange" (onCloseSongSelection)="onSongSelectionClose($event)"></app-song-selector>
+    <app-song-selector [pack]="packToChange" (onCloseSongSelection)="closeSongSelection($event)"></app-song-selector>
   </ng-container>
 
   <footer

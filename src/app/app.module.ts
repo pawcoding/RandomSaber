@@ -13,7 +13,6 @@ import {MatomoConsentMode, NgxMatomoTrackerModule} from "@ngx-matomo/tracker";
 import {environment} from "../environments/environment";
 import {NgxMatomoRouterModule} from "@ngx-matomo/router";
 import {AnalyticsInterceptor} from "./interceptors/analytics.interceptor";
-import {PackLoaderService} from "./services/pack-loader.service";
 import {CommonModule} from "@angular/common";
 import {StopPropagationDirective} from "./directives/stop-propagation.directive";
 import {PreventDefaultDirective} from "./directives/contextmenu-prevent-default.directive";
@@ -53,7 +52,6 @@ import {PreventDefaultDirective} from "./directives/contextmenu-prevent-default.
         trackPageTitle: false,
       })
     ],
-  providers: [PackLoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

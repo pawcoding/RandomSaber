@@ -1,118 +1,81 @@
-import {Component, computed, effect, inject, Signal, signal} from '@angular/core';
+import {Component, computed, inject} from '@angular/core';
 import {Difficulty} from "./enums/Difficulty";
 import {Mode} from "./enums/Mode";
-import {KeyValue} from "@angular/common";
-import {PackLoaderService} from "./services/pack-loader.service";
-import {Song} from "./interfaces/Song";
-import {iswitch} from "iswitch";
 import {environment} from "../environments/environment";
 import {MatomoTracker} from "@ngx-matomo/tracker";
 import {Pack} from "./interfaces/Pack";
-import {SongSelectorService} from "./services/song-selector.service";
+import {SongService} from "./services/song.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  private readonly packLoader = inject(PackLoaderService)
-  private readonly songSelector = inject(SongSelectorService)
-  private readonly tracker = inject(MatomoTracker)
-
-  protected readonly Mode = Mode
-
-  protected readonly Difficulty = Difficulty
-
   title = 'random-saber'
-
   version = environment.version
 
-  difficulty = signal(Difficulty.EXPERT)
+  // declare enums for template
+  protected readonly Difficulty = Difficulty
+  protected readonly Mode = Mode
+  protected readonly keepOrder = () => 0;
 
-  mode = signal(Mode.TWO_SABERS)
+  // inject services
+  private readonly _songService = inject(SongService)
+  private readonly tracker = inject(MatomoTracker)
 
-  originalOrder = (a: KeyValue<any, string>, b: KeyValue<any, string>) => 0
+  // initiate signals
+  protected readonly packs = this._songService.packsAsArray
+  protected readonly packsLoaded = computed(() => this.packs().length > 0)
+  protected readonly songsToPlay = this._songService.songsToPlay
+  protected readonly mode = this._songService.mode
+  protected readonly difficulty = this._songService.difficulty
 
-  songs: { pack: string, img: string, title: string }[] = []
-
-  refreshCooldown?: number
-
-  packToChange?: Pack
-
-  packs = this.packLoader.getPacks()
-
-  packsLoaded = computed(() => this.packs().length > 0)
-
+  protected packToChange?: Pack
 
   constructor() {
-    effect(() => {
-      this.refreshPlayableSongs(this.packs(), this.difficulty(), this.mode())
-    })
-
-    // this.packLoader.changeEmitter.subscribe(_ => {
-    //   clearTimeout(this.refreshCooldown)
-    //   this.refreshCooldown = window.setTimeout(() => {
-    //     this.refreshPlayableSongs()
-    //   }, 500)
-    // })
-
     this.tracker.setConsentGiven();
-
-    this.songSelector.packToOpen.subscribe(pack => {
-      this.packToChange = pack ?? undefined
-    })
   }
 
-  onSongSelectionClose(pack: Pack) {
+  /**
+   * Open the song selection dialog
+   * @param pack The pack to change
+   */
+  openSongSelection(pack: Pack) {
+    this.packToChange = pack
+  }
+
+  /**
+   * Close the song selection dialog.
+   * If a pack is given (has changed), mutate the pack.
+   * @param pack The pack to change
+   */
+  closeSongSelection(pack: Pack | undefined) {
     this.packToChange = undefined
-    this.songSelector.closePack()
+    if (!!pack)
+      this.mutatePack(pack)
   }
 
-  refreshPlayableSongs(packs: Pack[], difficulty: Difficulty, mode: Mode): void {
-    console.time('🎛️')
-
-    const difficultyNumber = iswitch(difficulty,
-      [Difficulty.EASY, () => 1],
-      [Difficulty.NORMAL, () => 10],
-      [Difficulty.HARD, () => 100],
-      [Difficulty.EXPERT, () => 1000],
-      [Difficulty.PRO, () => 10000]
-    ) || 1
-
-    this.songs = packs
-      .map(pack => (
-        pack.songs
-          .filter(song => this.isPlayable(song, difficultyNumber, mode))
-          .map(song => ({ pack: pack.title, img: pack.img, title: song.title }))
-        )
-      )
-      .filter(arr => arr.length > 0)
-      .flat()
-
-    console.timeEnd('🎛️')
-  }
-
-  private isPlayable(song: Song, difficultyNumber: number, mode: Mode): boolean {
-    if (!song.active)
-      return false
-
-    const modeNumber = iswitch(mode,
-      [Mode.TWO_SABERS, () => song.modes.twoSabers],
-      [Mode.ONE_SABER, () => song.modes.oneSaber],
-      [Mode.NO_ARROWS, () => song.modes.noArrows],
-      [Mode.FULL, () => song.modes.full],
-      [Mode.QUARTER, () => song.modes.quarter]
-    ) || 0
-
-    return (modeNumber / difficultyNumber) % 10 >= 1
-  }
-
+  /**
+   * Change the difficulty
+   * @param difficulty The new difficulty
+   */
   changeDifficulty(difficulty: Difficulty) {
-    this.difficulty.set(difficulty)
+    this._songService.setDifficulty(difficulty)
   }
 
+  /**
+   * Change the mode
+   * @param mode The new mode
+   */
   changeMode(mode: Mode) {
-    this.mode.set(mode)
+    this._songService.setMode(mode)
   }
 
+  /**
+   * Mutate the pack
+   * @param pack The pack to mutate
+   */
+  mutatePack(pack: Pack) {
+    this._songService.mutatePack(pack)
+  }
 }

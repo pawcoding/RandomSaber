@@ -1,12 +1,11 @@
-import {Component, computed, EventEmitter, Input, OnChanges, OnInit, Output, signal} from '@angular/core';
+import {Component, computed, DoCheck, EventEmitter, Input, Output, signal} from '@angular/core';
 import {Pack} from "../../interfaces/Pack";
-import {Song} from "../../interfaces/Song";
 
 @Component({
   selector: 'app-pack',
   templateUrl: './pack.component.html'
 })
-export class PackComponent implements OnChanges {
+export class PackComponent implements DoCheck {
   @Input()
   public pack: Pack
 
@@ -14,11 +13,11 @@ export class PackComponent implements OnChanges {
   protected readonly allActive = computed(() => this.active() === this.pack.songs.length)
 
   @Output()
-  private readonly onSelectAll = new EventEmitter<Song[]>()
+  private readonly onSelectAll = new EventEmitter<Pack>()
   @Output()
   private readonly onOpenSongSelection = new EventEmitter<Pack>()
 
-  ngOnChanges(): void {
+  ngDoCheck(): void {
     this.active.set(this.pack.songs.filter(song => song.active).length)
   }
 
@@ -27,7 +26,9 @@ export class PackComponent implements OnChanges {
   }
 
   protected selectAll(): void {
-    this.onSelectAll.emit(this.pack.songs)
+    this.pack.songs.forEach(song => song.active = !this.allActive())
+    this.ngDoCheck()
+    this.onSelectAll.emit(this.pack)
   }
 
 }
