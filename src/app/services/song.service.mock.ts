@@ -1,7 +1,10 @@
 import { Signal, signal } from '@angular/core'
-import { Pack, TEST_PACK } from '../interfaces/Pack'
+import { Pack, TEST_PACK } from '../interfaces/pack.interface'
 import { SongService } from './song.service'
-import { SongToPlay, TEST_SONG_TO_PLAY } from '../interfaces/SongToPlay'
+import {
+  SongToPlay,
+  TEST_SONG_TO_PLAY,
+} from '../interfaces/song-to-play.interface'
 import { Mode } from '../enums/Mode'
 import { Difficulty } from '../enums/Difficulty'
 
