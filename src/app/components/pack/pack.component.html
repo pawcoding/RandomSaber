@@ -11,9 +11,9 @@
   <label
     class="grid h-full cursor-pointer items-center rounded-lg bg-gray-100 dark:bg-gray-900 shadow hover:shadow-lg transition-colors group hover:bg-gray-50 dark:hover:bg-black grid-rows-[auto_1fr] sm:grid-cols-[6rem_1fr]"
     [for]="pack.id"
-    (click)="openSongSelection()"
-    (contextmenu)="selectAll()"
-    prevent-default>
+    (click)="onOpenSongSelection()"
+    (contextmenu)="onSelectAll()"
+    appPreventDefault>
     <span
       class="block h-24 w-full rounded-t-lg bg-cover bg-center brightness-100 saturate-100 transition-all max-w-24 group-hover:saturate-125 group-hover:brightness-125 sm:w-24 sm:max-w-none sm:rounded-l-lg sm:rounded-tr-none"
       [style.background-image]="'url(' + pack.img + ')'"></span>
@@ -34,8 +34,8 @@
           pack.title +
           '&quot;'
         "
-        (click)="selectAll()"
-        stop-propagation>
+        (click)="onSelectAll()"
+        appStopPropagation>
         <span class="font-bold text-accent-700 dark:text-accent-300">
           {{ active() }}/{{ pack.songs.length }}
         </span>

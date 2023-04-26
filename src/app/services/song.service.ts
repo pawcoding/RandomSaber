@@ -1,6 +1,6 @@
 import { computed, Injectable, Signal, signal } from '@angular/core'
-import { Pack } from '../interfaces/Pack'
-import { SongToPlay } from '../interfaces/SongToPlay'
+import { Pack } from '../interfaces/pack.interface'
+import { SongToPlay } from '../interfaces/song-to-play.interface'
 import { PackLoaderUtil } from '../utils/pack-loader.util'
 import { Mode } from '../enums/Mode'
 import { Difficulty } from '../enums/Difficulty'

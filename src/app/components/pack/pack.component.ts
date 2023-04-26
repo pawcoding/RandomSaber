@@ -7,7 +7,7 @@ import {
   Output,
   signal,
 } from '@angular/core'
-import { Pack, TEST_PACK } from '../../interfaces/Pack'
+import { Pack, TEST_PACK } from '../../interfaces/pack.interface'
 
 @Component({
   selector: 'app-pack',
@@ -23,21 +23,21 @@ export class PackComponent implements DoCheck {
   )
 
   @Output()
-  private readonly onSelectAll = new EventEmitter<Pack>()
+  private readonly selectAll = new EventEmitter<Pack>()
   @Output()
-  private readonly onOpenSongSelection = new EventEmitter<Pack>()
+  private readonly openSongSelection = new EventEmitter<Pack>()
 
   ngDoCheck(): void {
     this.active.set(this.pack.songs.filter((song) => song.active).length)
   }
 
-  protected openSongSelection(): void {
-    this.onOpenSongSelection.emit(this.pack)
+  protected onOpenSongSelection(): void {
+    this.openSongSelection.emit(this.pack)
   }
 
-  protected selectAll(): void {
+  protected onSelectAll(): void {
     this.pack.songs.forEach((song) => (song.active = !this.allActive()))
     this.ngDoCheck()
-    this.onSelectAll.emit(this.pack)
+    this.selectAll.emit(this.pack)
   }
 }

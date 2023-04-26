@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { SongToPlay } from '../../interfaces/SongToPlay'
+import { Component, Input } from '@angular/core'
+import { SongToPlay } from '../../interfaces/song-to-play.interface'
 
 @Component({
   selector: 'app-to-play',

@@ -10,19 +10,19 @@ import {
   signal,
   ViewChild,
 } from '@angular/core'
-import { Pack, TEST_PACK } from '../../interfaces/Pack'
-import { Song } from '../../interfaces/Song'
+import { Pack, TEST_PACK } from '../../interfaces/pack.interface'
+import { Song } from '../../interfaces/song.interface'
 
 @Component({
   selector: 'app-song-selector',
   templateUrl: './song-selector.component.html',
 })
 export class SongSelectorComponent implements OnChanges, AfterViewInit {
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('pack')
   public packInput = TEST_PACK
 
-  // @ts-ignore
-  protected readonly pack = signal(this.packInput, { deep: true })
+  protected readonly pack = signal(this.packInput)
   protected readonly active = computed(
     () => this.pack()?.songs.filter((song) => song.active).length
   )
@@ -30,7 +30,6 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
     () => this.active() === this.pack()?.songs.length
   )
 
-  // @ts-ignore
   private activeSet?: boolean[]
 
   @ViewChild('scrollContainer')
@@ -39,7 +38,7 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
   private readonly scrollContent: ElementRef
 
   @Output()
-  private readonly onCloseSongSelection = new EventEmitter<Pack | undefined>()
+  private readonly closeSongSelection = new EventEmitter<Pack | undefined>()
 
   ngOnChanges(): void {
     this.pack.set(this.packInput)
@@ -56,7 +55,7 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
   }
 
   protected select(song: Song): void {
-    this.pack.mutate((_pack) => {
+    this.pack.mutate(() => {
       song.active = !song.active
     })
   }
@@ -73,7 +72,7 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
         (active, index) => active !== this.pack()?.songs[index].active
       )
     )
-      this.onCloseSongSelection.emit(this.pack())
-    else this.onCloseSongSelection.emit()
+      this.closeSongSelection.emit(this.pack())
+    else this.closeSongSelection.emit()
   }
 }

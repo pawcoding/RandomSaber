@@ -64,8 +64,8 @@
       <ng-container *ngIf="packsLoaded()">
         <app-music-packs
           [packs]="packs()"
-          (onOpenSongSelection)="openSongSelection($event)"
-          (onSelectAll)="mutatePack($event)"></app-music-packs>
+          (openSongSelection)="openSongSelection($event)"
+          (selectAll)="mutatePack($event)"></app-music-packs>
       </ng-container>
     </div>
   </section>
@@ -73,7 +73,7 @@
   <ng-container *ngIf="packToChange">
     <app-song-selector
       [pack]="packToChange"
-      (onCloseSongSelection)="closeSongSelection($event)"></app-song-selector>
+      (closeSongSelection)="closeSongSelection($event)"></app-song-selector>
   </ng-container>
 
   <footer

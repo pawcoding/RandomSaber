@@ -7,8 +7,8 @@
     <div *ngFor="let pack of osts()">
       <app-pack
         [pack]="pack"
-        (onOpenSongSelection)="openSongSelection($event)"
-        (onSelectAll)="selectAll($event)"></app-pack>
+        (openSongSelection)="onOpenSongSelection($event)"
+        (selectAll)="onSelectAll($event)"></app-pack>
     </div>
   </section>
 
@@ -18,8 +18,8 @@
     <div *ngFor="let pack of addons()">
       <app-pack
         [pack]="pack"
-        (onOpenSongSelection)="openSongSelection($event)"
-        (onSelectAll)="selectAll($event)"></app-pack>
+        (openSongSelection)="onOpenSongSelection($event)"
+        (selectAll)="onSelectAll($event)"></app-pack>
     </div>
   </section>
 

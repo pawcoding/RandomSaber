@@ -1,8 +1,8 @@
-import { Pack } from '../interfaces/Pack'
+import { Pack } from '../interfaces/pack.interface'
 import { Mode } from '../enums/Mode'
 import { Difficulty } from '../enums/Difficulty'
-import { SongToPlay } from '../interfaces/SongToPlay'
-import { Song } from '../interfaces/Song'
+import { SongToPlay } from '../interfaces/song-to-play.interface'
+import { Song } from '../interfaces/song.interface'
 
 /**
  * Utility class retrieving songs that are playable with the given mode and difficulty.

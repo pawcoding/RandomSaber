@@ -1,4 +1,4 @@
-import { Song, TEST_SONG } from './Song'
+import { Song, TEST_SONG } from './song.interface'
 
 export interface Pack {
   id: string

@@ -1,6 +1,6 @@
 import { inject } from '@angular/core'
 import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { Pack } from '../interfaces/Pack'
+import { Pack } from '../interfaces/pack.interface'
 import { firstValueFrom } from 'rxjs'
 import { environment } from '../../environments/environment'
 
@@ -17,6 +17,7 @@ export class PackLoaderUtil {
   /**
    * Private constructor to prevent creating new instances of the singleton
    */
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   private constructor() {}
 
   /**
@@ -81,12 +82,11 @@ export class PackLoaderUtil {
     try {
       // prefer server to local storage if register changes
       registerContent = await firstValueFrom(
-        this._http.get<string>(`${environment.dataUrl}/.register`, {
-          responseType: 'text',
-        } as Object)
+        this._http.get<string>(`${environment.dataUrl}/.register`)
       )
       // save new register content to local storage
       localStorage.setItem('register', registerContent)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: HttpErrorResponse | any) {
       if (error instanceof HttpErrorResponse && error.status === 0) {
         this._hasInternetConnection = false
@@ -158,6 +158,7 @@ export class PackLoaderUtil {
       return await firstValueFrom(
         this._http.get<Pack>(`${environment.dataUrl}/${packId}.json`)
       )
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: HttpErrorResponse | any) {
       if (error instanceof HttpErrorResponse && error.status === 0) {
         this._hasInternetConnection = false

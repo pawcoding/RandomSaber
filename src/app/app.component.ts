@@ -3,7 +3,7 @@ import { Difficulty } from './enums/Difficulty'
 import { Mode } from './enums/Mode'
 import { environment } from '../environments/environment'
 import { MatomoTracker } from '@ngx-matomo/tracker'
-import { Pack } from './interfaces/Pack'
+import { Pack } from './interfaces/pack.interface'
 import { SongService } from './services/song.service'
 
 @Component({
@@ -51,7 +51,7 @@ export class AppComponent {
    */
   closeSongSelection(pack: Pack | undefined) {
     this.packToChange = undefined
-    if (!!pack) this.mutatePack(pack)
+    if (pack) this.mutatePack(pack)
   }
 
   /**
