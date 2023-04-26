@@ -11,7 +11,6 @@ import { SongService } from './services/song.service'
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'random-saber'
   version = environment.version
 
   // declare enums for template
@@ -34,6 +33,7 @@ export class AppComponent {
 
   constructor() {
     this.tracker.setConsentGiven()
+    this.tracker.trackPageView()
   }
 
   /**

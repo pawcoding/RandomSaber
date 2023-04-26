@@ -7,7 +7,7 @@ import {
   Output,
   signal,
 } from '@angular/core'
-import { Pack } from '../../interfaces/Pack'
+import { Pack, TEST_PACK } from '../../interfaces/Pack'
 
 @Component({
   selector: 'app-pack',
@@ -15,7 +15,7 @@ import { Pack } from '../../interfaces/Pack'
 })
 export class PackComponent implements DoCheck {
   @Input()
-  public pack: Pack
+  public pack = TEST_PACK
 
   protected readonly active = signal(0)
   protected readonly allActive = computed(

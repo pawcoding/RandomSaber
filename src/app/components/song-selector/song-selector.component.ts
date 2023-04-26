@@ -10,7 +10,7 @@ import {
   signal,
   ViewChild,
 } from '@angular/core'
-import { Pack } from '../../interfaces/Pack'
+import { Pack, TEST_PACK } from '../../interfaces/Pack'
 import { Song } from '../../interfaces/Song'
 
 @Component({
@@ -19,15 +19,15 @@ import { Song } from '../../interfaces/Song'
 })
 export class SongSelectorComponent implements OnChanges, AfterViewInit {
   @Input('pack')
-  public packInput: Pack
+  public packInput = TEST_PACK
 
   // @ts-ignore
   protected readonly pack = signal(this.packInput, { deep: true })
   protected readonly active = computed(
-    () => this.pack().songs.filter((song) => song.active).length
+    () => this.pack()?.songs.filter((song) => song.active).length
   )
   protected readonly allActive = computed(
-    () => this.active() === this.pack().songs.length
+    () => this.active() === this.pack()?.songs.length
   )
 
   // @ts-ignore
@@ -52,7 +52,7 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
     if (innerHeight > outerHeight)
       this.scrollContainer?.nativeElement.classList.add('pr-4')
 
-    this.activeSet = this.packInput.songs.map((song) => song.active)
+    this.activeSet = this.packInput?.songs.map((song) => song.active)
   }
 
   protected select(song: Song): void {
@@ -63,14 +63,14 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
 
   protected selectAll(): void {
     this.pack.mutate((pack) => {
-      pack.songs.forEach((song) => (song.active = !this.allActive()))
+      pack?.songs.forEach((song) => (song.active = !this.allActive()))
     })
   }
 
   protected closeSongSelector() {
     if (
       this.activeSet?.some(
-        (active, index) => active !== this.pack().songs[index].active
+        (active, index) => active !== this.pack()?.songs[index].active
       )
     )
       this.onCloseSongSelection.emit(this.pack())

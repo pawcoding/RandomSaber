@@ -10,3 +10,16 @@ export interface Song {
     quarter: number
   }
 }
+
+export const TEST_SONG: Song = {
+  number: 1,
+  title: 'Test Song',
+  active: true,
+  modes: {
+    twoSabers: 11111,
+    oneSaber: 11111,
+    noArrows: 11000,
+    full: 11,
+    quarter: 11010,
+  },
+}

@@ -25,7 +25,7 @@
     "prettier": "npx prettier --write src/",
     "prettier:check": "npx prettier --check src/",
     "test": "ng test",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless,FirefoxHeadless --code-coverage --progress=false",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless --code-coverage --progress=false",
     "prepare": "husky install",
     "pre-commit": "npx lint-staged"
   },

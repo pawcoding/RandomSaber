@@ -46,7 +46,7 @@ export class SongService {
    * Mutates the pack in the packs signal and saves it to local storage
    * @param pack the pack to mutate
    */
-  public mutatePack(pack: Pack) {
+  public mutatePack(pack: Pack): void {
     this._packs.mutate((packs) => (packs[pack.id] = pack))
     this._packLoaderUtil.safePackToLocalStorage(pack)
   }
@@ -76,7 +76,7 @@ export class SongService {
    * Set the mode and refresh the list of songs to play
    * @param mode the mode to set
    */
-  public setMode(mode: Mode) {
+  public setMode(mode: Mode): void {
     this._mode.set(mode)
   }
 
@@ -84,7 +84,7 @@ export class SongService {
    * Set the difficulty and refresh the list of songs to play
    * @param difficulty the difficulty to set
    */
-  public setDifficulty(difficulty: Difficulty) {
+  public setDifficulty(difficulty: Difficulty): void {
     this._difficulty.set(difficulty)
   }
 }

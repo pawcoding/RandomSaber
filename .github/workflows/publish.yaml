@@ -30,7 +30,7 @@ jobs:
         run: |
           npm cache clean --force
           npm ci
-          npm install -g @angular/cli@16.x > /dev/null
+          npm install -g @angular/cli@16.0.0-rc.1 > /dev/null
           npm run build
 
       # Upload to hosting

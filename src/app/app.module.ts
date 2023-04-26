@@ -13,7 +13,7 @@ import { MatomoConsentMode, NgxMatomoTrackerModule } from '@ngx-matomo/tracker'
 import { environment } from '../environments/environment'
 import { NgxMatomoRouterModule } from '@ngx-matomo/router'
 import { AnalyticsInterceptor } from './interceptors/analytics.interceptor'
-import { CommonModule } from '@angular/common'
+import { CommonModule, NgOptimizedImage } from '@angular/common'
 import { StopPropagationDirective } from './directives/stop-propagation.directive'
 import { PreventDefaultDirective } from './directives/contextmenu-prevent-default.directive'
 
@@ -45,12 +45,13 @@ import { PreventDefaultDirective } from './directives/contextmenu-prevent-defaul
       enableJSErrorTracking: true,
       acceptDoNotTrack: true,
       requireConsent: MatomoConsentMode.TRACKING,
-      disabled: environment.production,
+      disabled: !environment.production,
     }),
     NgxMatomoRouterModule.forRoot({
       interceptors: [AnalyticsInterceptor],
       trackPageTitle: false,
     }),
+    NgOptimizedImage,
   ],
   bootstrap: [AppComponent],
 })
