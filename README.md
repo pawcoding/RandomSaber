@@ -1,9 +1,12 @@
 # Random Saber
 
 [![GitHub](https://img.shields.io/github/license/pawcoding/randomsaber?color=brightgreen)](https://github.com/pawcoding/randomsaber/blob/main/LICENSE)
-[![Live Demo](https://img.shields.io/badge/live--demo-online-blue)](https://randomsaber.apps.pawcode.de)
-![Version](https://img.shields.io/badge/version-3.0.0-brightgreen)
+![Version](https://img.shields.io/badge/version-3.0.1-orange)
+![Pipeline Checks](https://img.shields.io/github/actions/workflow/status/pawcoding/randomsaber/test.yaml?branch=main)
 [![Discord](https://badgen.net/discord/members/GzgTh4hxrx)](https://discord.gg/GzgTh4hxrx)
+
+[![Live Demo](https://img.shields.io/badge/live--demo-online-blue)](https://randomsaber.apps.pawcode.de)
+[![Storybook](https://img.shields.io/badge/storybook-deeppink)](https://www.chromatic.com/library?appId=644b7fdf439968d5b404d5e8)
 
 Are you a proud owner of vr-glasses including [BeatSaber](https://beatsaber.com/)?
 Have you bought way too many music packs (or custom songs) to decide which song you want to play?  
@@ -36,7 +39,7 @@ Here is an example taken from `ost1.json`:
         "twoSabers": 11111, // Playable in all difficulties with two sabers
         "oneSaber": 1000,   // Only available on 'Expert' with one saber
         "noArrows": 1111,   // Available in every difficulty but 'Expert+' with no arrows
-        "full": 10,         // Only available on 'Normal' in 360° mode 
+        "full": 10,         // Only available on 'Normal' in 360° mode
         "quarter": 10       // Only available on 'Normal' in 90° mode
       }
     }, ...
@@ -45,8 +48,9 @@ Here is an example taken from `ost1.json`:
 ```
 
 ## Roadmap
+
 | Status | Version | Features                      |
-|--------|---------|-------------------------------|
+| ------ | ------- | ----------------------------- |
 | 🟩     | `1.0.0` | Proof of Concept              |
 | 🟩     | `2.0.0` | Packs fetched from Repository |
 | 🟩     | `3.0.0` | Progressive Web App           |
@@ -56,6 +60,7 @@ Here is an example taken from `ost1.json`:
 | 🟥     | `3.2.0` | Text-To-Speech                |
 
 ## Version 3.0.0
+
 - [x] PWA Support
 - [x] Footer
 - [x] Local Fonts
@@ -63,7 +68,9 @@ Here is an example taken from `ost1.json`:
 - [ ] Favicon, etc.
 
 ## License
+
 [MIT](https://github.com/pawcoding/randomsaber/blob/main/LICENSE)
 
 ## Author
+
 Luis Wolf &lt;development@pawcode.de&gt;
