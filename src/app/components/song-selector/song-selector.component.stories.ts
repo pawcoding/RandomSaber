@@ -12,6 +12,6 @@ type Story = StoryObj<SongSelectorComponent>
 
 export const Primary: Story = {
   args: {
-    packInput: TEST_PACK,
+    pack: TEST_PACK,
   },
 }

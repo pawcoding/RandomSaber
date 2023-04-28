@@ -14,16 +14,15 @@ import { Pack } from '../../interfaces/pack.interface'
   templateUrl: './music-packs.component.html',
 })
 export class MusicPacksComponent implements OnChanges {
-  // eslint-disable-next-line @angular-eslint/no-input-rename
-  @Input('packs')
-  public packsInput: Pack[] = []
+  @Input()
+  public packs: Pack[] = []
 
-  protected readonly packs = signal(this.packsInput)
+  protected readonly packsSignal = signal(this.packs)
   protected readonly osts = computed(() =>
-    this.packs().filter((pack) => pack.type === 'OST')
+    this.packsSignal().filter((pack) => pack.type === 'OST')
   )
   protected readonly addons = computed(() =>
-    this.packs().filter((pack) => pack.type === 'ADDON')
+    this.packsSignal().filter((pack) => pack.type === 'ADDON')
   )
 
   @Output()
@@ -32,7 +31,7 @@ export class MusicPacksComponent implements OnChanges {
   private readonly openSongSelection = new EventEmitter<Pack>()
 
   ngOnChanges(): void {
-    this.packs.set(this.packsInput)
+    this.packsSignal.set(this.packs)
   }
 
   protected onOpenSongSelection(pack: Pack): void {

@@ -18,16 +18,15 @@ import { Song } from '../../interfaces/song.interface'
   templateUrl: './song-selector.component.html',
 })
 export class SongSelectorComponent implements OnChanges, AfterViewInit {
-  // eslint-disable-next-line @angular-eslint/no-input-rename
-  @Input('pack')
-  public packInput = TEST_PACK
+  @Input()
+  public pack = TEST_PACK
 
-  protected readonly pack = signal(this.packInput)
+  protected readonly packSignal = signal(this.pack)
   protected readonly active = computed(
-    () => this.pack()?.songs.filter((song) => song.active).length
+    () => this.packSignal()?.songs.filter((song) => song.active).length
   )
   protected readonly allActive = computed(
-    () => this.active() === this.pack()?.songs.length
+    () => this.active() === this.packSignal()?.songs.length
   )
 
   private activeSet?: boolean[]
@@ -41,7 +40,7 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
   private readonly closeSongSelection = new EventEmitter<Pack | undefined>()
 
   ngOnChanges(): void {
-    this.pack.set(this.packInput)
+    this.packSignal.set(this.pack)
   }
 
   ngAfterViewInit(): void {
@@ -51,17 +50,17 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
     if (innerHeight > outerHeight)
       this.scrollContainer?.nativeElement.classList.add('pr-4')
 
-    this.activeSet = this.packInput?.songs.map((song) => song.active)
+    this.activeSet = this.pack?.songs.map((song) => song.active)
   }
 
   protected select(song: Song): void {
-    this.pack.mutate(() => {
+    this.packSignal.mutate(() => {
       song.active = !song.active
     })
   }
 
   protected selectAll(): void {
-    this.pack.mutate((pack) => {
+    this.packSignal.mutate((pack) => {
       pack?.songs.forEach((song) => (song.active = !this.allActive()))
     })
   }
@@ -69,10 +68,10 @@ export class SongSelectorComponent implements OnChanges, AfterViewInit {
   protected closeSongSelector() {
     if (
       this.activeSet?.some(
-        (active, index) => active !== this.pack()?.songs[index].active
+        (active, index) => active !== this.packSignal()?.songs[index].active
       )
     )
-      this.closeSongSelection.emit(this.pack())
+      this.closeSongSelection.emit(this.packSignal())
     else this.closeSongSelection.emit()
   }
 }

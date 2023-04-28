@@ -23,14 +23,14 @@
       <section class="flex">
         <span class="block h-20 w-20 cover-shadow">
           <img
-            [src]="pack().img"
-            [alt]="pack().title"
+            [src]="packSignal().img"
+            [alt]="packSignal().title"
             class="absolute block rounded-xl z-10 object-cover" />
         </span>
 
         <div class="flex h-20 grow flex-col justify-between px-4 text-sm">
           <h3 class="m-0 text-primary-500 dark:text-primary-300">
-            {{ pack().title }}
+            {{ packSignal().title }}
           </h3>
 
           <p
@@ -38,12 +38,12 @@
             [title]="
               (allActive() ? 'Remove' : 'Add') +
               ' all ' +
-              pack().songs.length +
+              packSignal().songs.length +
               ' Songs'
             "
             (click)="selectAll()">
             <span class="font-bold text-accent-700 dark:text-accent-300">
-              {{ active() }}/{{ pack().songs.length }}
+              {{ active() }}/{{ packSignal().songs.length }}
             </span>
             Songs
           </p>
@@ -58,7 +58,7 @@
         class="sm:max-h-96 max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-primary-100 dark:scrollbar-thumb-primary-300 rounded pb-1">
         <div #scrollContent class="grid gap-2 sm:grid-cols-2">
           <label
-            *ngFor="let song of pack().songs"
+            *ngFor="let song of packSignal().songs"
             class="flex cursor-pointer items-center rounded-md bg-white dark:bg-gray-900 px-4 py-2 shadow transition-shadow hover:shadow-md"
             [for]="song.number"
             [title]="
