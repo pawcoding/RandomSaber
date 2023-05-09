@@ -1,95 +1,80 @@
-import {Component} from '@angular/core';
-import {Difficulty} from "./enums/Difficulty";
-import {Mode} from "./enums/Mode";
-import {KeyValue} from "@angular/common";
-import {PackLoaderService} from "./services/pack-loader.service";
-import {Song} from "./interfaces/Song";
-import {iswitch} from "iswitch";
-import {environment} from "../environments/environment";
+import { Component, computed, inject } from '@angular/core'
+import { Difficulty } from './enums/Difficulty'
+import { Mode } from './enums/Mode'
+import { environment } from '../environments/environment'
+import { Pack } from './interfaces/pack.interface'
+import { SongService } from './services/song.service'
+import { MatomoTracker } from 'ngx-matomo-client'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
-
-  readonly Mode = Mode
-
-  readonly Difficulty = Difficulty
-
-  title = 'random-saber'
-
   version = environment.version
 
-  difficulty = Difficulty.EXPERT
+  // declare enums for template
+  protected readonly Difficulty = Difficulty
+  protected readonly Mode = Mode
+  protected readonly keepOrder = () => 0
 
-  mode = Mode.TWO_SABERS
+  // inject services
+  private readonly _songService = inject(SongService)
+  private readonly tracker = inject(MatomoTracker)
 
-  originalOrder = (a: KeyValue<any, string>, b: KeyValue<any, string>) => 0
+  // initiate signals
+  protected readonly packs = this._songService.packsAsArray
+  protected readonly packsLoaded = computed(() => this.packs().length > 0)
+  protected readonly songsToPlay = this._songService.songsToPlay
+  protected readonly mode = this._songService.mode
+  protected readonly difficulty = this._songService.difficulty
 
-  songs: { pack: string, title: string }[] = []
+  protected packToChange?: Pack
 
-  refreshCooldown?: NodeJS.Timeout
-
-
-  constructor(
-    private packLoaderService: PackLoaderService
-  ) {
-    packLoaderService.changeEmitter.subscribe(_ => {
-      clearTimeout(this.refreshCooldown)
-      this.refreshCooldown = setTimeout(() => {
-        this.refreshPlayableSongs()
-      }, 500)
-    })
+  constructor() {
+    this.tracker.setConsentGiven()
+    this.tracker.trackPageView()
   }
 
-  refreshPlayableSongs(): void {
-    console.time('🎛️')
-
-    const difficultyNumber = iswitch(this.difficulty,
-      [Difficulty.EASY, () => 1],
-      [Difficulty.NORMAL, () => 10],
-      [Difficulty.HARD, () => 100],
-      [Difficulty.EXPERT, () => 1000],
-      [Difficulty.PRO, () => 10000]
-    ) || 1
-
-    this.songs = this.packLoaderService.packs
-      .map(pack => (
-        pack.songs
-          .filter(song => this.isPlayable(song, difficultyNumber))
-          .map(song => ({ pack: pack.title, title: song.title }))
-        )
-      )
-      .filter(arr => arr.length > 0)
-      .flat()
-
-    console.timeEnd('🎛️')
+  /**
+   * Open the song selection dialog
+   * @param pack The pack to change
+   */
+  openSongSelection(pack: Pack) {
+    this.packToChange = pack
   }
 
-  private isPlayable(song: Song, difficultyNumber: number): boolean {
-    if (!song.active)
-      return false
-
-    const modeNumber = iswitch(this.mode,
-      [Mode.TWO_SABERS, () => song.modes.twoSabers],
-      [Mode.ONE_SABER, () => song.modes.oneSaber],
-      [Mode.NO_ARROWS, () => song.modes.noArrows],
-      [Mode.FULL, () => song.modes.full],
-      [Mode.QUARTER, () => song.modes.quarter]
-    ) || 0
-
-    return (modeNumber / difficultyNumber) % 10 >= 1
+  /**
+   * Close the song selection dialog.
+   * If a pack is given (has changed), mutate the pack.
+   * @param pack The pack to change
+   */
+  closeSongSelection(pack: Pack | undefined) {
+    this.packToChange = undefined
+    if (pack) this.mutatePack(pack)
   }
 
+  /**
+   * Change the difficulty
+   * @param difficulty The new difficulty
+   */
   changeDifficulty(difficulty: Difficulty) {
-    this.difficulty = difficulty
-    this.refreshPlayableSongs()
+    this._songService.setDifficulty(difficulty)
   }
 
+  /**
+   * Change the mode
+   * @param mode The new mode
+   */
   changeMode(mode: Mode) {
-    this.mode = mode
-    this.refreshPlayableSongs()
+    this._songService.setMode(mode)
   }
 
+  /**
+   * Mutate the pack
+   * @param pack The pack to mutate
+   */
+  mutatePack(pack: Pack) {
+    this._songService.mutatePack(pack)
+  }
 }

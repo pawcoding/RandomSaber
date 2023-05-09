@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { MusicPacksComponent } from './music-packs.component';
+import { MusicPacksComponent } from './music-packs.component'
 
 describe('MusicPacksComponent', () => {
-  let component: MusicPacksComponent;
-  let fixture: ComponentFixture<MusicPacksComponent>;
+  let component: MusicPacksComponent
+  let fixture: ComponentFixture<MusicPacksComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MusicPacksComponent ]
-    })
-    .compileComponents();
+      declarations: [MusicPacksComponent],
+    }).compileComponents()
 
-    fixture = TestBed.createComponent(MusicPacksComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(MusicPacksComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

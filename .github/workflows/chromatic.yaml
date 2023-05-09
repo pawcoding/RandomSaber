@@ -1,0 +1,70 @@
+name: 🎨 Publish Storybook
+
+# Controls when the action will run.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - 'version/**'
+
+jobs:
+  chromatic-deploy:
+    name: 🧑🏽‍🎨 Deploy to Chromatic
+    # using Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # Setup Node v16
+      - name: 💻 Use node 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Install pnpm
+      - name: 📦 Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+
+      # Get pnpm store directory
+      - name: 📦 Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: 📦 Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # Install dependencies
+      - name: 🔨 Install dependencies
+        run: |
+          pnpm install --frozen-lockfile --prefer-frozen-lockfile
+          pnpm install -g @angular/cli@16.0.0-rc.1 > /dev/null
+
+      # Upload to Chromatic
+      - name: 📤 Upload to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: 'build:storybook'
+          exitZeroOnChanges: true
+          exitOnceUploaded: true
+        env:
+          CI: true

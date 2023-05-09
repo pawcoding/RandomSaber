@@ -6,8 +6,9 @@ import packageJson from '../../package.json'
 
 export const environment = {
   production: false,
-  version: packageJson.version
-};
+  version: packageJson.version,
+  dataUrl: 'https://raw.githubusercontent.com/pawcoding/RandomSaber/main/packs',
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,48 +1,43 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Pack} from "../../interfaces/Pack";
-import {SongSelectorService} from "../../services/song-selector.service";
-import {PackLoaderService} from "../../services/pack-loader.service";
+import {
+  Component,
+  computed,
+  DoCheck,
+  EventEmitter,
+  Input,
+  Output,
+  signal,
+} from '@angular/core'
+import { Pack, TEST_PACK } from '../../interfaces/pack.interface'
 
 @Component({
   selector: 'app-pack',
-  templateUrl: './pack.component.html'
+  templateUrl: './pack.component.html',
 })
-export class PackComponent implements OnInit {
-
+export class PackComponent implements DoCheck {
   @Input()
-  pack?: Pack
+  public pack = TEST_PACK
 
-  active = 0
+  protected readonly active = signal(0)
+  protected readonly allActive = computed(
+    () => this.active() === this.pack.songs.length
+  )
 
-  constructor(
-    private songSelectorService: SongSelectorService,
-    private packLoaderService: PackLoaderService
-  ) {
-    songSelectorService.changeEvent.subscribe(_ => this.refreshActive())
+  @Output()
+  private readonly selectAll = new EventEmitter<Pack>()
+  @Output()
+  private readonly openSongSelection = new EventEmitter<Pack>()
+
+  ngDoCheck(): void {
+    this.active.set(this.pack.songs.filter((song) => song.active).length)
   }
 
-  ngOnInit(): void {
-    this.refreshActive()
+  protected onOpenSongSelection(): void {
+    this.openSongSelection.emit(this.pack)
   }
 
-  refreshActive() {
-    this.active = this.pack?.songs.filter(song => song.active).length || 0
-    this.packLoaderService.changeEmitter.emit(this.pack)
+  protected onSelectAll(): void {
+    this.pack.songs.forEach((song) => (song.active = !this.allActive()))
+    this.ngDoCheck()
+    this.selectAll.emit(this.pack)
   }
-
-  toggleAllActive($event: MouseEvent | undefined): void {
-    $event?.preventDefault() || $event?.stopPropagation()
-
-    if (this.active === this.pack?.songs.length)
-      this.pack?.songs.forEach(song => song.active = false)
-    else
-      this.pack?.songs.forEach(song => song.active = true)
-
-    this.songSelectorService.changeEvent.emit()
-  }
-
-  openSongSelection(pack: Pack) {
-    this.songSelectorService.openPack(pack)
-  }
-
 }

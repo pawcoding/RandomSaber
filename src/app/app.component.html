@@ -1,19 +1,18 @@
 <main
-  class="flex flex-col items-center
-    h-screen overflow-scroll p-8 space-y-4 sm:space-y-8
-    scrollbar-thin scrollbar-thumb-primary-500 dark:scrollbar-thumb-gray-600 scrollbar-track-primary-200 dark:scrollbar-track-transparent"
->
+  class="flex flex-col items-center h-screen overflow-y-auto p-8 space-y-4 sm:space-y-8 scrollbar-thin scrollbar-thumb-primary-500 dark:scrollbar-thumb-gray-600 scrollbar-track-primary-200 dark:scrollbar-track-transparent">
   <section>
-    <h1 class="text-center font-mono text-5xl drop-shadow-2xl">Random<br>Saber</h1>
+    <h1 class="text-center font-mono text-5xl drop-shadow-2xl">
+      Random<br />Saber
+    </h1>
   </section>
 
   <section class="w-full">
     <div class="mx-auto max-w-screen-md">
-      <app-to-play [songs]="songs"></app-to-play>
+      <app-to-play [songs]="songsToPlay()"></app-to-play>
     </div>
 
     <span class="mx-auto my-8 block max-w-screen-sm">
-      <hr class="mx-4 rounded-full border-t-2 border-t-primary-300">
+      <hr class="mx-4 rounded-full border-t-2 border-t-primary-300" />
     </span>
 
     <div class="mx-auto max-w-screen-md">
@@ -22,8 +21,9 @@
 
         <p class="ml-auto text-primary-700">
           <span class="font-semibold">
-            {{songs.length}}
-          </span> Songs
+            {{ songsToPlay().length }}
+          </span>
+          Songs
         </p>
       </div>
 
@@ -33,13 +33,11 @@
           class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-colors transition-shadow text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
           title="Select a mode to play"
           (ngModelChange)="changeMode($event)"
-          [(ngModel)]="mode"
-        >
+          [ngModel]="mode()">
           <option
-            *ngFor="let modeItem of Mode | keyvalue: originalOrder"
-            [ngValue]="modeItem.value"
-          >
-            {{modeItem.value}}
+            *ngFor="let modeItem of Mode | keyvalue : keepOrder"
+            [ngValue]="modeItem.value">
+            {{ modeItem.value }}
           </option>
         </select>
 
@@ -48,55 +46,57 @@
           class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-colors transition-shadow text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
           title="Select your difficulty level"
           (ngModelChange)="changeDifficulty($event)"
-          [(ngModel)]="difficulty"
-        >
+          [ngModel]="difficulty()">
           <option
-            *ngFor="let difficultyItem of Difficulty | keyvalue: originalOrder"
-            [ngValue]="difficultyItem.value"
-          >
-            {{difficultyItem.value}}
+            *ngFor="let difficultyItem of Difficulty | keyvalue : keepOrder"
+            [ngValue]="difficultyItem.value">
+            {{ difficultyItem.value }}
           </option>
         </select>
       </article>
     </div>
 
     <span class="mx-auto my-8 block max-w-screen-sm">
-      <hr class="mx-4 rounded-full border-t-2 border-t-primary-300">
+      <hr class="mx-4 rounded-full border-t-2 border-t-primary-300" />
     </span>
 
     <div class="mx-auto max-w-screen-2xl">
-      <app-music-packs></app-music-packs>
+      <ng-container *ngIf="packsLoaded()">
+        <app-music-packs
+          [packs]="packs()"
+          (openSongSelection)="openSongSelection($event)"
+          (selectAll)="mutatePack($event)"></app-music-packs>
+      </ng-container>
     </div>
   </section>
 
-  <app-song-selector></app-song-selector>
+  <ng-container *ngIf="packToChange">
+    <app-song-selector
+      [pack]="packToChange"
+      (closeSongSelection)="closeSongSelection($event)"></app-song-selector>
+  </ng-container>
 
   <footer
-    class="flex gap-4 flex-col sm:flex-row items-center justify-around text-center w-full max-w-screen-2xl mx-auto mt-10"
-  >
+    class="flex gap-4 flex-col sm:flex-row items-center justify-around text-center w-full max-w-screen-2xl mx-auto mt-10">
     <a
       href="https://github.com/pawcoding/randomsaber"
       rel="noreferrer noopener"
       target="_blank"
-      title="View source code on GitHub"
-    >
+      title="View source code on GitHub">
       View on GitHub
     </a>
 
-    <span class="cursor-default">
-      Version {{version}}
-    </span>
+    <span class="cursor-default"> Version {{ version }} </span>
 
     <a
       href="https://pawcode.de/"
       target="_blank"
-      title="Created by pawcode Development"
-    >
+      title="Created by pawcode Development">
       <img
-        height="32" width="139"
+        height="32"
+        width="139"
         alt="pawcode&nbsp;Development"
-        src="/assets/pawcode.svg"
-      >
+        src="/assets/pawcode.svg" />
     </a>
   </footer>
 </main>
