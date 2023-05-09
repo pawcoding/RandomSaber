@@ -9,9 +9,12 @@ import { HttpClientModule } from '@angular/common/http'
 import { SongSelectorComponent } from './components/song-selector/song-selector.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ServiceWorkerModule } from '@angular/service-worker'
-import { MatomoConsentMode, NgxMatomoTrackerModule } from '@ngx-matomo/tracker'
+import {
+  MatomoConsentMode,
+  NgxMatomoModule,
+  NgxMatomoRouterModule,
+} from 'ngx-matomo-client'
 import { environment } from '../environments/environment'
-import { NgxMatomoRouterModule } from '@ngx-matomo/router'
 import { AnalyticsInterceptor } from './interceptors/analytics.interceptor'
 import { CommonModule, NgOptimizedImage } from '@angular/common'
 import { StopPropagationDirective } from './directives/stop-propagation.directive'
@@ -39,7 +42,7 @@ import { PreventDefaultDirective } from './directives/contextmenu-prevent-defaul
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    NgxMatomoTrackerModule.forRoot({
+    NgxMatomoModule.forRoot({
       siteId: 3,
       trackerUrl: 'https://analytics.apps.pawcode.de/',
       enableJSErrorTracking: true,

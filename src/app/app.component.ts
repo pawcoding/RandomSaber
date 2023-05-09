@@ -2,9 +2,9 @@ import { Component, computed, inject } from '@angular/core'
 import { Difficulty } from './enums/Difficulty'
 import { Mode } from './enums/Mode'
 import { environment } from '../environments/environment'
-import { MatomoTracker } from '@ngx-matomo/tracker'
 import { Pack } from './interfaces/pack.interface'
 import { SongService } from './services/song.service'
+import { MatomoTracker } from 'ngx-matomo-client'
 
 @Component({
   selector: 'app-root',

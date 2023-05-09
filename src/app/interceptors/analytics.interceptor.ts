@@ -1,7 +1,6 @@
 import { inject, Injectable } from '@angular/core'
-import { MatomoRouterInterceptor } from '@ngx-matomo/router'
-import { MatomoTracker } from '@ngx-matomo/tracker'
 import { NavigationEnd } from '@angular/router'
+import { MatomoRouterInterceptor, MatomoTracker } from 'ngx-matomo-client'
 import { Observable } from 'rxjs'
 
 @Injectable()
