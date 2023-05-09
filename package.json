@@ -16,20 +16,21 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prepwa": "npm run build",
+    "prepwa": "pnpm run build",
     "pwa": "npx http-server -p 4242 -c-1 dist/random-saber",
     "build": "ng build",
     "build:storybook": "ng run random-saber:build-storybook",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
-    "lint:watch": "nodemon --exec \"npm run lint || exit 1\" --ext ts,html,css",
+    "lint:watch": "nodemon --exec \"pnpm run lint || exit 1\" --ext ts,html,css",
     "prettier": "npx prettier --write src/",
     "prettier:check": "npx prettier --check src/",
     "test": "ng test",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless --code-coverage --progress=false",
     "prepare": "husky install",
     "pre-commit": "npx lint-staged",
-    "storybook": "ng run random-saber:storybook"
+    "storybook": "ng run random-saber:storybook",
+    "preinstall": "npx only-allow pnpm"
   },
   "private": true,
   "lint-staged": {
@@ -45,6 +46,7 @@
     "@angular/platform-browser-dynamic": "^16.0.0-rc.3",
     "@angular/router": "^16.0.0-rc.3",
     "@angular/service-worker": "^16.0.0-rc.3",
+    "@babel/runtime": "^7.21.5",
     "@ngx-matomo/router": "^4.0.1",
     "@ngx-matomo/tracker": "^4.0.1",
     "browser-hrtime": "^1.1.8",
