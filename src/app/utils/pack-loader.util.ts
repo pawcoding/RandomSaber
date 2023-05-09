@@ -39,7 +39,9 @@ export class PackLoaderUtil {
     let elapsedHrTime = process.hrtime(startHrTime)
     let elapsedTimeInMs = elapsedHrTime[0] * 1000 + elapsedHrTime[1] / 1000000
     console.info(
-      `[PackLoader]\tLoaded register with ${register.length} packs in ${elapsedTimeInMs}ms.`
+      `[PackLoader]\tLoaded register with ${
+        register.length
+      } packs in ${elapsedTimeInMs.toFixed(2)}ms.`
     )
 
     startHrTime = process.hrtime()
@@ -52,7 +54,9 @@ export class PackLoaderUtil {
     elapsedHrTime = process.hrtime(startHrTime)
     elapsedTimeInMs = elapsedHrTime[0] * 1000 + elapsedHrTime[1] / 1000000
     console.info(
-      `[PackLoader]\tLoaded ${packsAsArray.length} packs in ${elapsedTimeInMs}ms.`
+      `[PackLoader]\tLoaded ${
+        packsAsArray.length
+      } packs in ${elapsedTimeInMs.toFixed(2)}ms.`
     )
 
     return packsAsArray.reduce((packs, pack) => {
@@ -82,7 +86,9 @@ export class PackLoaderUtil {
     try {
       // prefer server to local storage if register changes
       registerContent = await firstValueFrom(
-        this._http.get<string>(`${environment.dataUrl}/.register`)
+        this._http.get(`${environment.dataUrl}/.register`, {
+          responseType: 'text',
+        })
       )
       // save new register content to local storage
       localStorage.setItem('register', registerContent)
@@ -101,7 +107,10 @@ export class PackLoaderUtil {
       }
     }
 
-    return registerContent.split('\n').filter((line) => line.length > 0)
+    return registerContent
+      .replace(/\r/g, '')
+      .split('\n')
+      .filter((line) => line.length > 0)
   }
 
   /**

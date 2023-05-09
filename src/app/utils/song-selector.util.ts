@@ -37,11 +37,11 @@ export class SongSelectorUtil {
 
     const elapsedHrTime = process.hrtime(startHrTime)
     const elapsedTimeInMs = elapsedHrTime[0] * 1000 + elapsedHrTime[1] / 1000000
-    console.log(
+    console.info(
       `[SongSelector]\tCollected ${
         songs.length
       } songs with "${mode}" on "${difficulty}" in ${elapsedTimeInMs.toFixed(
-        4
+        2
       )}ms.`
     )
 
