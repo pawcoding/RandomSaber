@@ -30,7 +30,7 @@
       <article class="flex gap-2 sm:gap-4">
         <select
           name="mode"
-          class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-colors transition-shadow text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
+          class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-all text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
           title="Select a mode to play"
           (ngModelChange)="changeMode($event)"
           [ngModel]="mode()">
@@ -43,7 +43,7 @@
 
         <select
           name="difficulty"
-          class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-colors transition-shadow text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
+          class="w-full cursor-pointer appearance-none rounded-lg border-none bg-gray-100 font-semibold shadow transition-all text-primary-600 hover:bg-gray-50 hover:shadow-lg focus:shadow-lg focus:ring-0 dark:hover:bg-black dark:text-primary-200 dark:bg-gray-900"
           title="Select your difficulty level"
           (ngModelChange)="changeDifficulty($event)"
           [ngModel]="difficulty()">
@@ -75,6 +75,53 @@
       [pack]="packToChange"
       (closeSongSelection)="closeSongSelection($event)"></app-song-selector>
   </ng-container>
+
+  <section
+    *ngIf="showTrackingNotice"
+    class="fixed bottom-0 left-0 bg-gray-200/95 p-4 mx-auto max-w-screen-md md:rounded-tr-md md:w-[60vw] text-sm">
+    <span class="font-medium">Help me improve the site</span>
+    <p>
+      <span class="inline-block">
+        This website uses a private
+        <a
+          href="https://matomo.org/"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="underline"
+          title="Visit Matomo">
+          Matomo
+        </a>
+        instance to collect anonymized data about the use of the site. No
+        personally identifiable information is collected, and all data about
+        your usage is anonymized.
+      </span>
+
+      <a
+        href="https://colors.apps.pawcode.de/analytics"
+        title="Get mor information about my analytics"
+        target="_blank"
+        class="underline block text-right">
+        More information
+      </a>
+    </p>
+
+    <div class="flex items-center justify-center gap-4 mt-4">
+      <button
+        (click)="disableTracking()"
+        class="py-2 px-4 bg-gray-300 font-medium text-gray-800 rounded cursor-pointer transition-colors duration-500 hover:bg-gray-400 hover:text-gray-900"
+        type="reset"
+        title="Keep analytics disabled">
+        No, thanks
+      </button>
+      <button
+        (click)="allowTracking()"
+        class="py-2 px-4 bg-primary-700 font-medium text-primary-100 rounded cursor-pointer transition-colors duration-500 hover:bg-primary-800 hover:text-primary-200"
+        type="submit"
+        title="Activate analytics">
+        Activate analytics
+      </button>
+    </div>
+  </section>
 
   <footer
     class="flex gap-4 flex-col sm:flex-row items-center justify-around text-center w-full max-w-screen-2xl mx-auto mt-10">

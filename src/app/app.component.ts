@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core'
+import { Component, OnInit, computed, inject } from '@angular/core'
 import { Difficulty } from './enums/Difficulty'
 import { Mode } from './enums/Mode'
 import { environment } from '../environments/environment'
@@ -10,8 +10,9 @@ import { MatomoTracker } from 'ngx-matomo-client'
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   version = environment.version
+  showTrackingNotice = false
 
   // declare enums for template
   protected readonly Difficulty = Difficulty
@@ -31,9 +32,21 @@ export class AppComponent {
 
   protected packToChange?: Pack
 
-  constructor() {
-    this.tracker.setConsentGiven()
-    this.tracker.trackPageView()
+  ngOnInit(): void {
+    // setup tracking
+    switch (this.hasTrackingAllowed()) {
+      case 1:
+        // tracking is enabled
+        this.tracker.setConsentGiven()
+        break
+      case 2:
+        // tracking is not set
+        this.showTrackingNotice = true
+        break
+      default:
+        // tracking is disabled
+        break
+    }
   }
 
   /**
@@ -76,5 +89,62 @@ export class AppComponent {
    */
   mutatePack(pack: Pack) {
     this._songService.mutatePack(pack)
+  }
+
+  /**
+   * Allow tracking and remember the consent for 90 days
+   */
+  allowTracking() {
+    this.showTrackingNotice = false
+    this.rememberTracking(true)
+    this.tracker.setConsentGiven()
+  }
+
+  /**
+   * Disable tracking and remember the choice for 90 days
+   */
+  disableTracking() {
+    this.showTrackingNotice = false
+    this.rememberTracking(false)
+    this.tracker.forgetConsentGiven()
+  }
+
+  /**
+   * Check if the user has disabled tracking.
+   * @returns {number} 0 = disabled, 1 = enabled, 2 = not set
+   */
+  private hasTrackingAllowed(): number {
+    const item = localStorage.getItem('tracking')
+    if (item) {
+      try {
+        const parsed = JSON.parse(item)
+        if (parsed.expiry < Date.now()) {
+          localStorage.removeItem('tracking')
+          return 2
+        } else {
+          if (parsed.value) {
+            this.rememberTracking(true)
+          }
+
+          return parsed.value ? 1 : 0
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    }
+    return 2
+  }
+
+  /**
+   * Remember if the user has enabled tracking for 90 days.
+   * @param enabled
+   */
+  rememberTracking(enabled: boolean): void {
+    const item = {
+      value: enabled,
+      expiry: Date.now() + 1000 * 60 * 60 * 24 * 90,
+    }
+
+    localStorage.setItem('tracking', JSON.stringify(item))
   }
 }
